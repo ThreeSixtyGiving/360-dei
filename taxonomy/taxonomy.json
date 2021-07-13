@@ -1,0 +1,581 @@
+{
+  "population_groups": [
+    {
+      "prefix": "DEI01",
+      "name": "Communities experiencing racial inequity",
+      "description": "Communities that experience inequity as a result of their race or ethnic group. Ethnic group refers to the group that people self identify with, which may be related to their national/geographical origin, skin colours, and other identities. This is often referred to as “Black, Asian and Minority Ethnic” or BAME.",
+      "categories": [
+        {
+          "code": "DEI010000",
+          "name": "Communities experiencing racial inequity",
+          "description": "Organisations working on racial justice or supporting people from multiple communities",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI010100",
+          "name": "Black / African / Caribbean / Black British",
+          "description": "Mixed Black/ Black British",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+            {
+              "code": "DEI010110",
+              "name": "African",
+              "description": ""
+            },
+            {
+              "code": "DEI010120",
+              "name": "Caribbean",
+              "description": ""
+            },
+            {
+              "code": "DEI010199",
+              "name": "Any other Black/ African/ Caribbean background",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "code": "DEI010200",
+          "name": "Mixed",
+          "description": "Mixed groups",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+            {
+              "code": "DEI010210",
+              "name": "White and Black",
+              "description": ""
+            },
+            {
+              "code": "DEI010220",
+              "name": "White and Asian",
+              "description": ""
+            },
+            {
+              "code": "DEI010299",
+              "name": "Any other Mixed / Multiple ethnic background",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "code": "DEI010300",
+          "name": "Asian / Asian British",
+          "description": "Mixed Asian/ Asian British",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+            {
+              "code": "DEI010310",
+              "name": "Indian",
+              "description": ""
+            },
+            {
+              "code": "DEI010320",
+              "name": "Pakistani",
+              "description": ""
+            },
+            {
+              "code": "DEI010330",
+              "name": "Bangladeshi",
+              "description": ""
+            },
+            {
+              "code": "DEI010340",
+              "name": "Chinese",
+              "description": ""
+            },
+            {
+              "code": "DEI010399",
+              "name": "Any other Asian background",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "code": "DEI019900",
+          "name": "Other Group experiencing ethnic or racial inequity",
+          "description": "",
+          "is_other_option_in_population_group": true,
+          "sub_categories": [
+            {
+              "code": "DEI019910",
+              "name": "Arab",
+              "description": ""
+            },
+            {
+              "code": "DEI019920",
+              "name": "Jewish",
+              "description": ""
+            },
+            {
+              "code": "DEI019930",
+              "name": "Gypsy, Roma and Traveller Communities",
+              "description": ""
+            },
+            {
+              "code": "DEI019999",
+              "name": "Any other Ethnic group",
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "prefix": "DEI02",
+      "name": "Disabled people",
+      "description": "self-identify as disabled, with particular impairments, which have a long-term impact on quality of life",
+      "categories": [
+        {
+          "code": "DEI020000",
+          "name": "Disabled people",
+          "description": "Working with people across multiple disabilities",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI020100",
+          "name": "Physical Impairment",
+          "description": "Working with people with multiple or different physical impairments",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+            {
+              "code": "DEI020110",
+              "name": "Mobility",
+              "description": "Physical/mobility impairment, such as a difficulty using your arms or mobility issues which require you to use a wheelchair or crutches"
+            },
+            {
+              "code": "DEI020120",
+              "name": "Visual impairment/ partial sight/sight loss",
+              "description": "Visual impairment, such as being blind or having a serious visual impairment"
+            },
+            {
+              "code": "DEI020130",
+              "name": "Hard of hearing/ deaf/ hearing loss",
+              "description": "Hearing impairment, such as being deaf or having a serious hearing impairment"
+            },
+            {
+              "code": "DEI020140",
+              "name": "Speech impairment",
+              "description": "Impaired ability to produce speech sounds"
+            }
+          ]
+        },
+        {
+          "code": "DEI020200",
+          "name": "Mental Health",
+          "description": "Mental health condition or experience, such as depression or psychosis or addiction that impacts people’s lives",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI020300",
+          "name": "Cognitive differences",
+          "description": "Multiple or different cognitive differences",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+            {
+              "code": "DEI020310",
+              "name": "Learning disability",
+              "description": "A reduced intellectual ability and difficulty with everyday activities which affects someone for their whole life, such as Down’s Syndrome"
+            },
+            {
+              "code": "DEI020320",
+              "name": "Learning difficulty",
+              "description": "Learning difficulties such as dyslexia and ADHD"
+            },
+            {
+              "code": "DEI020330",
+              "name": "Neurodivergent",
+              "description": "Cognitive difference such as autistic spectrum disorder where individuals are impacted by the social environment"
+            }
+          ]
+        },
+        {
+          "code": "DEI020400",
+          "name": "Health",
+          "description": "Long-standing illness or health condition, such as cancer, HIV, diabetes, chronic heart disease or epilepsy, or other rare conditions",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI029900",
+          "name": "Other",
+          "description": "Other - An impairment, medical condition or environmental disadvantage that is not listed above",
+          "is_other_option_in_population_group": true,
+          "sub_categories": [
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "DEI03",
+      "name": "Faith communities",
+      "description": "",
+      "categories": [
+        {
+          "code": "DEI030000",
+          "name": "Faith",
+          "description": "Interfaith and multi-faith groups",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI030100",
+          "name": "Catholic",
+          "description": "People who describe their faith as Catholic or Roman Catholic",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI030200",
+          "name": "Protestant",
+          "description": "Anglicans, Adventists, Baptists, Methodists, Pentecostals, Presbyterians, Religious Society of Friends, Reformed Churches and other Protestant denominations",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI030300",
+          "name": "Other Christian denominations",
+          "description": "Orthodox and other denominations",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI030400",
+          "name": "Buddhist",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI030500",
+          "name": "Hindu",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI030600",
+          "name": "Jewish",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI030700",
+          "name": "Muslim",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI030800",
+          "name": "Sikh",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI030900",
+          "name": "Atheist",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI031000",
+          "name": "Agnostic",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI039900",
+          "name": "Other",
+          "description": "Other faiths and beliefs",
+          "is_other_option_in_population_group": true,
+          "sub_categories": [
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "DEI04",
+      "name": "LGBT+ People",
+      "description": "Lesbian, Gay, Bisexual and Trans + people",
+      "categories": [
+        {
+          "code": "DEI040000",
+          "name": "LGBT+ People",
+          "description": "Working with LGBT+ people with multiple identities",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI040100",
+          "name": "Bisexual people",
+          "description": "All bisexual people",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+            {
+              "code": "DEI040110",
+              "name": "Bisexual men",
+              "description": ""
+            },
+            {
+              "code": "DEI040120",
+              "name": "Bisexual women",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "code": "DEI040200",
+          "name": "Gay men",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI040300",
+          "name": "Lesbian/gay women",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI040400",
+          "name": "Transgender people",
+          "description": "All transgender people",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+            {
+              "code": "DEI040410",
+              "name": "Trans men",
+              "description": ""
+            },
+            {
+              "code": "DEI040420",
+              "name": "Trans women",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "code": "DEI040500",
+          "name": "Non-binary people",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI049900",
+          "name": "Other",
+          "description": "Other LGBT+ People, including queer and intersex people",
+          "is_other_option_in_population_group": true,
+          "sub_categories": [
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "DEI05",
+      "name": "Migrants",
+      "description": "Groups who are first generation and/or recent migrants to the UK",
+      "categories": [
+        {
+          "code": "DEI050000",
+          "name": "Migrants",
+          "description": "Migrants with multiple status",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI050100",
+          "name": "Asylum seekers",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI050200",
+          "name": "Refugees",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI050300",
+          "name": "Undocumented People",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI059900",
+          "name": "Other Migrants",
+          "description": "This includes other migrants with official immigration status, e.g. international students; and who are naturalised British",
+          "is_other_option_in_population_group": true,
+          "sub_categories": [
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "DEI06",
+      "name": "Older and younger people",
+      "description": "",
+      "categories": [
+        {
+          "code": "DEI060100",
+          "name": "Older People",
+          "description": "Typically those aged 60 and over",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI060200",
+          "name": "Young adults",
+          "description": "Typically young people from 16 to 25 years of age",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI060300",
+          "name": "Young people",
+          "description": "Typically young people from 8 to 25",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI060400",
+          "name": "Children and Young People",
+          "description": "Typically people under 26 but sometimes people under 19",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI060500",
+          "name": "Children",
+          "description": "Under 16",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI060600",
+          "name": "Infants",
+          "description": "Under 2 years of age",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "DEI07",
+      "name": "People who are educationally or economically disadvantaged",
+      "description": "self-identify as from an economically and/ or educationally disadvantaged background, including working class backgrounds, with long-term impact on their life outcomes; also people currently experiencing financial hardship",
+      "categories": [
+        {
+          "code": "DEI070000",
+          "name": "People who are educationally or economically disadvantaged",
+          "description": "This will be defined by the organisation, such as children eligible for free school meals or for adults were eligible for free school meals as a child, families receiving benefits or universal credit, people who are homeless, people who did not complete formal education or otherwise considered in deprivation or poverty etc.",
+          "is_other_option_in_population_group": true,
+          "sub_categories": [
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "DEI08",
+      "name": "Women and girls",
+      "description": "Those who identify and live as  women and girls",
+      "categories": [
+        {
+          "code": "DEI080000",
+          "name": "Women and girls",
+          "is_other_option_in_population_group": true,
+          "description": "Those who identify and live as women and girls",
+          "sub_categories": [
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "DEI70",
+      "name": "Welsh Language Speaking",
+      "description": "",
+      "categories": [
+        {
+          "code": "DEI700000",
+          "name": "Welsh Language Speaking",
+          "description": "",
+          "is_other_option_in_population_group": true,
+          "sub_categories": [
+          ]
+        }
+      ]
+    },
+    {
+      "prefix": "DEI80",
+      "name": "Community background",
+      "description": "",
+      "categories": [
+        {
+          "code": "DEI800010",
+          "name": "The Protestant community",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI800020",
+          "name": "The Catholic community",
+          "description": "",
+          "is_other_option_in_population_group": false,
+          "sub_categories": [
+          ]
+        },
+        {
+          "code": "DEI800030",
+          "name": "Neither",
+          "description": "",
+          "is_other_option_in_population_group": true,
+          "sub_categories": [
+          ]
+        }
+      ]
+    }
+  ]
+}

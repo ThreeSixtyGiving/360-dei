@@ -2,19 +2,21 @@ import os
 import sys
 import datetime
 
-master_doc = 'index'
-
-project = 'ThreeSixtyGiving Standard Extension for DEI'
-copyright = '2021, 360Giving'
-author = '360Giving'
-
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","python"))
 
-extensions = ['threesixtygivingdei.sphinx.taxonomy']
+from threesixtygivingdei.utils import build_schema_file_with_codes, build_schema_file_with_standard_and_extension
+
+master_doc = 'index'
+
+project = 'ThreeSixtyGiving Standard Extension for DEI'
+copyright = '2021, 360Giving'
+author = '360Giving'
+
+extensions = ['threesixtygivingdei.sphinx.taxonomy', 'sphinxcontrib.jsonschema']
 
 html_static_path = [
     '_static',
@@ -42,4 +44,14 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # otherwise, readthedocs.org uses their theme by default, so no need to specify it
 
+build_schema_file_with_codes(
+    input_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","schema","360-giving-schema-extension.json"),
+    output_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-only-extension.json"),
+    taxonomy_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","taxonomy","taxonomy.json"),
+)
 
+build_schema_file_with_standard_and_extension(
+    standard_schema_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","standard","schema","360-giving-schema.json"),
+    extension_schema_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-only-extension.json"),
+    output_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-including-extension.json"),
+)

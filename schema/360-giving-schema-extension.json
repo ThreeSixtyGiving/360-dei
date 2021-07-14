@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "DEI_Answer": {
+      "type": "object",
+      "properties": {
+        "codes": {
+          "title": "Taxonomy Codes",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "INSERT_ENUM_OF_ALL_CODES_HERE": true
+          }
+        },
+        "reason_answer_not_given": {
+          "title": "Reason Answer Not Given",
+          "type": "string",
+          "enum": [
+            "prefer_not_to_say_selected",
+            "other_selected"
+          ]
+        },
+        "reason_question_not_asked": {
+          "title": "Reason Question Not Asked",
+          "type": "string",
+          "enum": [
+            "n/a"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "dei": {
+      "type": "object",
+      "title": "DEI Data",
+      "properties": {
+        "Q1": {
+          "$ref": "#/definitions/DEI_Answer",
+          "title": "Data for Q1"
+        },
+        "Q2": {
+          "$ref": "#/definitions/DEI_Answer",
+          "title": "Data for Q2"
+        },
+        "Q3": {
+          "$ref": "#/definitions/DEI_Answer",
+          "title": "Data for Q3"
+        }
+      },
+      "required": [
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

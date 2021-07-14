@@ -1,0 +1,33 @@
+.dei_form input[type="checkbox"], .dei_form input[type="radio"] {
+    margin-right: 5px;
+}
+.dei_form textarea {
+    display: block;
+    width: 100%;
+    height: 200px;
+}
+.dei_form_population_group, .dei_form_prefer_not_to_say, .dei_form_other {
+    margin: 20px 10px;
+}
+.dei_form_population_group .dei_form_population_group_description {
+    font-style: italic;
+}
+.dei_form_population_group .dei_form_must_select_one_in_population_group_warning {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid red;
+    color: red;
+    font-weight: bold;
+}
+.dei_form_population_group .dei_form_category {
+    margin: 20px 30px;
+}
+.dei_form_population_group .dei_form_category .dei_form_category_description {
+    font-style: italic;
+}
+.dei_form_population_group .dei_form_category .dei_form_sub_category {
+    margin: 20px 50px;
+}
+.dei_form_population_group .dei_form_category .dei_form_sub_category .dei_form_sub_category_description {
+    font-style: italic;
+}

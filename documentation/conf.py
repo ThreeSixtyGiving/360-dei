@@ -18,7 +18,9 @@ extensions = ['deiextensions.codelist']
 
 html_static_path = [
     '_static',
-    '../taxonomy/taxonomy.json'
+    '../taxonomy/taxonomy.json',
+    '../form/form.js',
+    '../form/form.css',
 ]
 
 templates_path = ['_templates']

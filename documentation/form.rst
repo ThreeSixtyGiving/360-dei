@@ -86,6 +86,6 @@ Demo
 
     </div>
 
-    <link rel="stylesheet" href="_static/form.css">
-    <script src="_static/form.js"></script>
+    <link rel="stylesheet" href="form.css">
+    <script src="form.js"></script>
     <script src="_static/js/form-in-docs.js"></script>

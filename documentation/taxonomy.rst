@@ -7,7 +7,7 @@ Taxonomy
 Machine Readable
 ================
 
-You can get `this Taxonomy data in JSON format here <_static/taxonomy.json>`_.
+You can get `this Taxonomy data in JSON format here <taxonomy.json>`_.
 
 DEI01
 =====

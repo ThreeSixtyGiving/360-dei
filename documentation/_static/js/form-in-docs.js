@@ -68,7 +68,7 @@ function setup() {
 }
 
 $( document ).ready(function() {
-    codes = new possible_answers_data("_static/taxonomy.json");
+    codes = new possible_answers_data("taxonomy.json");
     codes.start(
         function() {
             $('#screenSetup').show();

@@ -21,6 +21,11 @@ extensions = ['threesixtygivingdei.sphinx.taxonomy', 'sphinxcontrib.jsonschema']
 
 html_static_path = [
     '_static',
+]
+
+
+html_extra_path = [
+    '_root',
     '../taxonomy/taxonomy.json',
     '../form/form.js',
     '../form/form.css',
@@ -47,14 +52,14 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
 
 build_schema_file_with_codes(
     input_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","schema","360-giving-schema-extension.json"),
-    output_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-only-extension.json"),
+    output_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_root","360-giving-schema-only-extension.json"),
     taxonomy_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","taxonomy","taxonomy.json"),
 )
 
 build_schema_file_with_standard_and_extension(
     standard_schema_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","standard","schema","360-giving-schema.json"),
-    extension_schema_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-only-extension.json"),
-    output_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-including-extension.json"),
+    extension_schema_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_root","360-giving-schema-only-extension.json"),
+    output_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_root","360-giving-schema-including-extension.json"),
 )
 
 
@@ -62,16 +67,16 @@ for output_format in ['xlsx']:
     flattentool.create_template(
         root_id='',
         output_format=output_format,
-        output_name=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-fields."+output_format),
-        schema=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-including-extension.json"),
+        output_name=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_root","360-giving-schema-fields."+output_format),
+        schema=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_root","360-giving-schema-including-extension.json"),
         main_sheet_name='grants',
     )
 
     flattentool.create_template(
         root_id='',
         output_format=output_format,
-        output_name=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-titles."+output_format),
-        schema=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-including-extension.json"),
+        output_name=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_root","360-giving-schema-titles."+output_format),
+        schema=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_root","360-giving-schema-including-extension.json"),
         main_sheet_name='grants',
         rollup=True,
         use_titles=True,

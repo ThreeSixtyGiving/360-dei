@@ -16,7 +16,10 @@ sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
 
 extensions = ['deiextensions.codelist']
 
-html_static_path = ['_static']
+html_static_path = [
+    '_static',
+    '../taxonomy/taxonomy.json'
+]
 
 templates_path = ['_templates']
 

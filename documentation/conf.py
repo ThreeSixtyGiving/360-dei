@@ -1,6 +1,7 @@
 import os
 import sys
 import datetime
+import flattentool
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -55,3 +56,23 @@ build_schema_file_with_standard_and_extension(
     extension_schema_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-only-extension.json"),
     output_filename=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-including-extension.json"),
 )
+
+
+for output_format in ['xlsx']:
+    flattentool.create_template(
+        root_id='',
+        output_format=output_format,
+        output_name=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-fields."+output_format),
+        schema=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-including-extension.json"),
+        main_sheet_name='grants',
+    )
+
+    flattentool.create_template(
+        root_id='',
+        output_format=output_format,
+        output_name=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-titles."+output_format),
+        schema=os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","documentation","_static","360-giving-schema-including-extension.json"),
+        main_sheet_name='grants',
+        rollup=True,
+        use_titles=True,
+    )

@@ -8,5 +8,6 @@ ThreeSixtyGiving Standard Extension for DEI
    schema
    taxonomy
    form
+   spreadsheet
 
 

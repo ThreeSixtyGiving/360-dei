@@ -3,3 +3,4 @@ sphinx-rtd-theme
 sphinxcontrib-opendataservices-jsonschema
 jsonmerge
 flattentool
+compiletojsonschema

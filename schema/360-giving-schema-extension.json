@@ -4,6 +4,26 @@
     "DEI_Answer": {
       "type": "object",
       "properties": {
+        "asked_status": {
+          "title": "Asked Status",
+          "description": "How was this question asked?",
+          "type": "string",
+          "codelist": "askedStatus.csv"
+        },
+        "available_options": {
+          "title": "Available Options",
+          "description": "Which options were available when the question was asked?",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "codelist": "availableOptions.csv"
+          }
+        },
+        "reply_status": {
+          "title": "Reply Status",
+          "type": "string",
+          "codelist": "replyStatus.csv"
+        },
         "codes": {
           "title": "Taxonomy Codes",
           "type": "array",
@@ -12,20 +32,13 @@
             "INSERT_ENUM_OF_ALL_CODES_HERE": true
           }
         },
-        "reason_answer_not_given": {
-          "title": "Reason Answer Not Given",
-          "type": "string",
-          "enum": [
-            "prefer_not_to_say_selected",
-            "other_selected"
-          ]
+        "lived_experience": {
+          "title": "Lived Experience",
+          "type": "string"
         },
-        "reason_question_not_asked": {
-          "title": "Reason Question Not Asked",
-          "type": "string",
-          "enum": [
-            "n/a"
-          ]
+        "geography": {
+          "title": "Geography",
+          "type": "string"
         }
       },
       "additionalProperties": false

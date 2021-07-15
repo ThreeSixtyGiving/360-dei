@@ -14,47 +14,65 @@ Demo
 
         <form onsubmit="setup(); return false;" id="setupForm">
 
-            <label>
-                Q1
-                <select name="Q1">
-                    <option value="ask" selected>Ask</option>
-                    <option value="n/a">N/A</option>
-                </select>
-            </label>
+            <div>
+                <label>
+                    Q1
+                    <select name="Q1">
+                        <option value="NOT_ASKED_NOT_APPLICABLE">Not Asked Not Applicable</option>
+                        <option value="NOT_ASKED_HISTORICAL_DATA">Not Asked Historical Data</option>
+                        <option value="ASKED_DURING_APPLICATION" selected>Asked during the application process</option>
+                        <option value="ASKED_AFTER_APPLICATION">Asked after the application process</option>
+                    </select>
+                </label>
+            </div>
 
-            <label>
-                Q2
-                <select name="Q2">
-                    <option value="ask" selected>Ask</option>
-                    <option value="n/a">N/A</option>
-                </select>
-            </label>
+            <div>
+                <label>
+                    Q2
+                    <select name="Q2">
+                        <option value="NOT_ASKED_NOT_APPLICABLE">Not Asked Not Applicable</option>
+                        <option value="NOT_ASKED_HISTORICAL_DATA">Not Asked Historical Data</option>
+                        <option value="ASKED_DURING_APPLICATION" selected>Asked during the application process</option>
+                        <option value="ASKED_AFTER_APPLICATION">Asked after the application process</option>
+                    </select>
+                </label>
+            </div>
 
-            <label>
-                Q3
-                <select name="Q3">
-                    <option value="ask" selected>Ask</option>
-                    <option value="n/a">N/A</option>
-                </select>
-            </label>
+            <div>
+                <label>
+                    Q3
+                    <select name="Q3">
+                        <option value="NOT_ASKED_NOT_APPLICABLE">Not Asked Not Applicable</option>
+                        <option value="NOT_ASKED_HISTORICAL_DATA">Not Asked Historical Data</option>
+                        <option value="ASKED_DURING_APPLICATION" selected>Asked during the application process</option>
+                        <option value="ASKED_AFTER_APPLICATION">Asked after the application process</option>
+                    </select>
+                </label>
+            </div>
 
-            <label>
-                Prefer not to say
-                <select name="PreferNotToSay">
-                    <option value="1">Option is available</option>
-                    <option value="0">Option is not available</option>
-                </select>
-            </label>
+            <div>
+                <label>
+                    Lived Experience
+                    <select name="LivedExperience">
+                        <option value="1" selected>Option is available</option>
+                        <option value="0">Option is not available</option>
+                    </select>
+                </label>
+            </div>
 
-            <label>
-                Other
-                <select name="Other">
-                    <option value="1">Option is available</option>
-                    <option value="0">Option is not available</option>
-                </select>
-            </label>
+            <div>
+                <label>
+                    Prefer not to say (Not recommended)
+                    <select name="PreferNotToSay">
+                        <option value="1">Option is available</option>
+                        <option value="0" selected>Option is not available</option>
+                    </select>
+                </label>
+            </div>
 
-            <input type="submit" value="Show Form">
+            <div>
+                <input type="submit" value="Show Form">
+            </div>
 
         </form>
 

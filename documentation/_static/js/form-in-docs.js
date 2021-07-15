@@ -7,7 +7,7 @@ class question {
         if (this.form) {
             return this.form.getData();
         } else {
-            return {'reason_question_not_asked': this.reasonForFormMissing }
+            return {'asked_status': this.reasonForFormMissing }
         }
     }
 }
@@ -23,13 +23,13 @@ function setup() {
     $('#screenForm').show();
     // Common options
     let PreferNotToSayAvailable = $('#setupForm [name="PreferNotToSay"]').val() == "1";
-    let OtherAvailable = $('#setupForm [name="Other"]').val() == "1";
+    let LivedExperienceAvailable = $('#setupForm [name="LivedExperience"]').val() == "1";
     // Q1
     let q1option = $('#setupForm [name="Q1"]').val();
-    if (q1option == "ask") {
+    if (q1option.substring(0, 5) == "ASKED") {
         $('#Q1FormWrapper').show();
         q1 = new question(
-            new form(codes, '#Q1Form', 'Q1-', 'formQ1-', questionCallback, PreferNotToSayAvailable, OtherAvailable),
+            new form(codes, '#Q1Form', 'Q1-', 'formQ1-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, q1option),
             null
         );
         q1.form.start();
@@ -39,10 +39,10 @@ function setup() {
     }
     // Q2
     let q2option = $('#setupForm [name="Q2"]').val();
-    if (q2option == "ask") {
+    if (q2option.substring(0, 5) == "ASKED") {
         $('#Q2FormWrapper').show();
         q2 = new question(
-            new form(codes, '#Q2Form', 'Q2-', 'formQ2-', questionCallback, PreferNotToSayAvailable, OtherAvailable),
+            new form(codes, '#Q2Form', 'Q2-', 'formQ2-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, q2option),
             null
         );
         q2.form.start();
@@ -52,10 +52,10 @@ function setup() {
     }
     // Q3
     let q3option = $('#setupForm [name="Q3"]').val();
-    if (q3option == "ask") {
+    if (q3option.substring(0, 5) == "ASKED") {
         $('#Q3FormWrapper').show();
         q3 = new question(
-            new form(codes, '#Q3Form', 'Q3-', 'formQ3-', questionCallback, PreferNotToSayAvailable, OtherAvailable),
+            new form(codes, '#Q3Form', 'Q3-', 'formQ3-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, q3option),
             null
         );
         q3.form.start();

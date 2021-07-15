@@ -1,0 +1,5 @@
+Code,Name,Description
+NOT_ASKED_NOT_APPLICABLE,Not Asked Not Applicable, Not asked because this was not applicable to this funder's situation
+NOT_ASKED_HISTORICAL_DATA,Not Asked Historical Data, Not asked because this grant was made before any DEI process was adopted
+ASKED_DURING_APPLICATION,Asked during the application process, before a decision was made
+ASKED_AFTER_APPLICATION,Asked after the application process, after a decision was made

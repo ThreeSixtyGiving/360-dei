@@ -1,0 +1,5 @@
+Code,Name,Description
+TAXONOMY,Taxonomy,They can select some or all of the Taxonomy codes. If some, it is not required to say which codes can or can not be selected.
+GEOGRAPHY,Geography
+LIVED_EXPERIENCE,Lived Experience
+PREFER_NOT_TO_SAY,Prefer Not To Say,Use of this option is discouraged

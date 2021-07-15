@@ -37,14 +37,15 @@ class possible_answers_data {
 }
 
 class form {
-    constructor(possible_answers_data, form_selector, form_element_prefix, css_id_prefix, on_data_change_callback, prefer_not_to_say_option_available, other_option_available) {
+    constructor(possible_answers_data, form_selector, form_element_prefix, css_id_prefix, on_data_change_callback, prefer_not_to_say_option_available, lived_experience_option_available, asked_status) {
         this.possible_answers_data = possible_answers_data;
         this.form_selector = form_selector;
         this.form_element_prefix = form_element_prefix;
         this.css_id_prefix = css_id_prefix;
         this.on_data_change_callback = on_data_change_callback;
         this.prefer_not_to_say_option_available = prefer_not_to_say_option_available;
-        this.other_option_available = other_option_available;
+        this.lived_experience_option_available = lived_experience_option_available;
+        this.asked_status = asked_status;
     }
     start() {
         // Handy vars
@@ -109,21 +110,21 @@ class form {
             }
             html += '</div>';
         }
+        if (this.lived_experience_option_available) {
+            html += '<div class="dei_form_lived_experience">';
+            html += '<label class="dei_form_lived_experience_label">';
+            html += '<input type="checkbox">';
+            html += 'Lived Experience';
+            html += '</label>';
+            html += '<textarea id="'+this.css_id_prefix+'_lived_experience_value"></textarea>';
+            html += '</div>';
+        }
         if (this.prefer_not_to_say_option_available) {
             html += '<div class="dei_form_prefer_not_to_say">';
             html += '<label class="dei_form_prefer_not_to_say_label">';
             html += '<input type="checkbox">';
             html += 'Prefer not to say';
             html += '</label>';
-            html += '</div>';
-        }
-        if (this.other_option_available) {
-            html += '<div class="dei_form_other">';
-            html += '<label class="dei_form_other_label">';
-            html += '<input type="checkbox">';
-            html += 'Other';
-            html += '</label>';
-            html += '<textarea id="'+this.css_id_prefix+'_other_reason"></textarea>';
             html += '</div>';
         }
         html += '</div>';
@@ -140,16 +141,16 @@ class form {
                 }
             );
         }
-        if (this.other_option_available) {
-            $('#'+this.css_id_prefix+'_other_reason').hide();
-            $('#'+this.css_id_prefix+'_form .dei_form_other_label input').change(
+        if (this.lived_experience_option_available) {
+            $('#'+this.css_id_prefix+'_lived_experience_value').hide();
+            $('#'+this.css_id_prefix+'_form .dei_form_lived_experience_label input').change(
                 function(event) {
-                    class_instance.otherChanged();
+                    class_instance.livedExperienceChanged();
                 }
             );
-            $('#'+this.css_id_prefix+'_form .dei_form_other textarea').change(
+            $('#'+this.css_id_prefix+'_form .dei_form_lived_experience textarea').change(
                 function(event) {
-                    class_instance.otherReasonChanged();
+                    class_instance.livedExperienceValueChanged();
                 }
             );
         }
@@ -207,12 +208,11 @@ class form {
 
     preferNotToSayChanged() {
         let val = $('#'+this.css_id_prefix+'_form .dei_form_prefer_not_to_say_label input').is(':checked');
-        console.log(val);
         let selectors = [
                 '#'+this.css_id_prefix+'_form .dei_form_population_group_label input',
                 '#'+this.css_id_prefix+'_form .dei_form_category_label input',
                 '#'+this.css_id_prefix+'_form .dei_form_sub_category_label input',
-                '#'+this.css_id_prefix+'_form .dei_form_other_label input',
+                '#'+this.css_id_prefix+'_form .dei_form_lived_experience_label input',
             ];
         if (val) {
             $(selectors.join(", ")).prop('disabled', true);
@@ -224,49 +224,52 @@ class form {
         }
     }
 
-    otherChanged() {
-        let val = $('#'+this.css_id_prefix+'_form .dei_form_other_label input').is(':checked');
-        console.log(val);
-        let selectors = [
-                '#'+this.css_id_prefix+'_form .dei_form_population_group_label input',
-                '#'+this.css_id_prefix+'_form .dei_form_category_label input',
-                '#'+this.css_id_prefix+'_form .dei_form_sub_category_label input',
-                '#'+this.css_id_prefix+'_form .dei_form_prefer_not_to_say_label input',
-            ];
+    livedExperienceChanged() {
+        let val = $('#'+this.css_id_prefix+'_form .dei_form_lived_experience_label input').is(':checked');
         if (val) {
-            $(selectors.join(", ")).prop('disabled', true);
-            $('#'+this.css_id_prefix+'_other_reason').show();
+            $('#'+this.css_id_prefix+'_lived_experience_value').show();
         } else {
-            $(selectors.join(", ")).prop('disabled', false);
-            $('#'+this.css_id_prefix+'_other_reason').hide();
+            $('#'+this.css_id_prefix+'_lived_experience_value').hide();
         }
         if (this.on_data_change_callback) {
             this.on_data_change_callback();
         }
     }
 
-    otherReasonChanged() {
+    livedExperienceValueChanged() {
         if (this.on_data_change_callback) {
             this.on_data_change_callback();
         }
     }
 
     getData() {
-        // Prefer not to say
-        let preferNotToSayVal = $('#'+this.css_id_prefix+'_form .dei_form_prefer_not_to_say_label input').is(':checked');
-        if (preferNotToSayVal) {
-            return {"reason_answer_not_given":"prefer_not_to_say_selected"}
+        let out = {
+            "asked_status": this.asked_status,
+            "available_options": ["TAXONOMY"],
+            "reply_status": "REPLY_GOT"
         }
-        // Other
-        let otherVal = $('#'+this.css_id_prefix+'_form .dei_form_other_label input').is(':checked');
-        if (otherVal) {
-            return {
-                "reason_answer_not_given":"other_selected",
-                "other": $('#'+this.css_id_prefix+'_other_reason').val()
+
+        // Prefer not to say (This rules out all other options, so do this first and return straight away if so)
+        if (this.prefer_not_to_say_option_available) {
+            out['available_options'].push('PREFER_NOT_TO_SAY');
+            let preferNotToSayVal = $('#'+this.css_id_prefix+'_form .dei_form_prefer_not_to_say_label input').is(':checked');
+            if (preferNotToSayVal) {
+                out['reply_status'] = 'REPLY_PREFER_NOT_TO_SAY';
+                return out;
             }
         }
+
+        // Lived Experience
+        if (this.lived_experience_option_available) {
+            out['available_options'].push('LIVED_EXPERIENCE');
+            let livedExperience = $('#'+this.css_id_prefix+'_form .dei_form_lived_experience_label input').is(':checked');
+            if (livedExperience) {
+                out['lived_experience'] = $('#'+this.css_id_prefix+'_lived_experience_value').val();
+            }
+        }
+
         // Get codes!
-        let out = [];
+        let codes_out = [];
         let population_groups = this.possible_answers_data.getPopulationGroups();
         for (let idx in population_groups) {
             let population_group = population_groups[idx];
@@ -274,11 +277,13 @@ class form {
             if (population_group_element.is(':checked')) {
                 var cat_or_subcat_checked_elements = $('#'+this.css_id_prefix+'_population_group_'+population_group['prefix']+ ' .dei_form_category input:checked');
                 if (cat_or_subcat_checked_elements.length > 0) {
-                    out.push(cat_or_subcat_checked_elements.attr('value'));
+                    codes_out.push(cat_or_subcat_checked_elements.attr('value'));
                 }
             }
         }
-        return {"codes": out}
+        out['codes'] = codes_out;
+
+        return out;
     }
 }
 

@@ -1,5 +1,3 @@
 *.pyc
-/documentation/_root/360-giving-schema-including-extension.json
-/documentation/_root/360-giving-schema-only-extension.json
-/documentation/_root/360-giving-schema-fields.xlsx
-/documentation/_root/360-giving-schema-titles.xlsx
+/_compiled/*.json
+/_compiled/*.xlsx

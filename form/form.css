@@ -6,7 +6,7 @@
     width: 100%;
     height: 200px;
 }
-.dei_form_population_group, .dei_form_prefer_not_to_say, .dei_form_lived_experience {
+.dei_form_population_group, .dei_form_prefer_not_to_say, .dei_form_lived_experience, .dei_form_geography {
     margin: 20px 10px;
 }
 .dei_form_population_group .dei_form_population_group_description {

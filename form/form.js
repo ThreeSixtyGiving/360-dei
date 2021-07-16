@@ -37,7 +37,17 @@ class possible_answers_data {
 }
 
 class form {
-    constructor(possible_answers_data, form_selector, form_element_prefix, css_id_prefix, on_data_change_callback, prefer_not_to_say_option_available, lived_experience_option_available, asked_status) {
+    constructor(
+        possible_answers_data,
+        form_selector,
+        form_element_prefix,
+        css_id_prefix,
+        on_data_change_callback,
+        prefer_not_to_say_option_available,
+        lived_experience_option_available,
+        geography_option_available,
+        asked_status
+    ) {
         this.possible_answers_data = possible_answers_data;
         this.form_selector = form_selector;
         this.form_element_prefix = form_element_prefix;
@@ -45,6 +55,7 @@ class form {
         this.on_data_change_callback = on_data_change_callback;
         this.prefer_not_to_say_option_available = prefer_not_to_say_option_available;
         this.lived_experience_option_available = lived_experience_option_available;
+        this.geography_option_available = geography_option_available;
         this.asked_status = asked_status;
     }
     start() {
@@ -54,6 +65,19 @@ class form {
 
         // Build HTML of form
         var html = '<div id="'+this.css_id_prefix+'_form" class="dei_form">';
+
+        // Geography
+        if (this.geography_option_available) {
+            html += '<div class="dei_form_geography">';
+            html += '<label class="dei_form_geography_label">';
+            html += '<input type="checkbox">';
+            html += 'Geography';
+            html += '</label>';
+            html += '<textarea id="'+this.css_id_prefix+'_geography_value"></textarea>';
+            html += '</div>';
+        }
+
+        // Taxonomy
         for (let idx in population_groups) {
             let population_group = population_groups[idx];
 
@@ -148,9 +172,22 @@ class form {
                     class_instance.livedExperienceChanged();
                 }
             );
-            $('#'+this.css_id_prefix+'_form .dei_form_lived_experience textarea').change(
+            $('#'+this.css_id_prefix+'_form .dei_form_lived_experience textarea').on("keyup change",
                 function(event) {
                     class_instance.livedExperienceValueChanged();
+                }
+            );
+        }
+        if (this.geography_option_available) {
+            $('#'+this.css_id_prefix+'_geography_value').hide();
+            $('#'+this.css_id_prefix+'_form .dei_form_geography_label input').change(
+                function(event) {
+                    class_instance.geographyChanged();
+                }
+            );
+            $('#'+this.css_id_prefix+'_form .dei_form_geography textarea').on("keyup change",
+                function(event) {
+                    class_instance.geographyValueChanged();
                 }
             );
         }
@@ -209,6 +246,7 @@ class form {
     preferNotToSayChanged() {
         let val = $('#'+this.css_id_prefix+'_form .dei_form_prefer_not_to_say_label input').is(':checked');
         let selectors = [
+                '#'+this.css_id_prefix+'_form .dei_form_geography_label input',
                 '#'+this.css_id_prefix+'_form .dei_form_population_group_label input',
                 '#'+this.css_id_prefix+'_form .dei_form_category_label input',
                 '#'+this.css_id_prefix+'_form .dei_form_sub_category_label input',
@@ -242,16 +280,42 @@ class form {
         }
     }
 
+    geographyChanged() {
+        let val = $('#'+this.css_id_prefix+'_form .dei_form_geography_label input').is(':checked');
+        if (val) {
+            $('#'+this.css_id_prefix+'_geography_value').show();
+        } else {
+            $('#'+this.css_id_prefix+'_geography_value').hide();
+        }
+        if (this.on_data_change_callback) {
+            this.on_data_change_callback();
+        }
+    }
+
+    geographyValueChanged() {
+        if (this.on_data_change_callback) {
+            this.on_data_change_callback();
+        }
+    }
+
     getData() {
         let out = {
             "asked_status": this.asked_status,
             "available_options": ["TAXONOMY"],
             "reply_status": "REPLY_GOT"
         }
+        if (this.prefer_not_to_say_option_available) {
+            out['available_options'].push('PREFER_NOT_TO_SAY');
+        }
+        if (this.lived_experience_option_available) {
+            out['available_options'].push('LIVED_EXPERIENCE');
+        }
+        if (this.geography_option_available) {
+            out['available_options'].push('GEOGRAPHY');
+        }
 
         // Prefer not to say (This rules out all other options, so do this first and return straight away if so)
         if (this.prefer_not_to_say_option_available) {
-            out['available_options'].push('PREFER_NOT_TO_SAY');
             let preferNotToSayVal = $('#'+this.css_id_prefix+'_form .dei_form_prefer_not_to_say_label input').is(':checked');
             if (preferNotToSayVal) {
                 out['reply_status'] = 'REPLY_PREFER_NOT_TO_SAY';
@@ -261,10 +325,17 @@ class form {
 
         // Lived Experience
         if (this.lived_experience_option_available) {
-            out['available_options'].push('LIVED_EXPERIENCE');
             let livedExperience = $('#'+this.css_id_prefix+'_form .dei_form_lived_experience_label input').is(':checked');
             if (livedExperience) {
                 out['lived_experience'] = $('#'+this.css_id_prefix+'_lived_experience_value').val();
+            }
+        }
+
+        // Geography
+        if (this.geography_option_available) {
+            let livedExperience = $('#'+this.css_id_prefix+'_form .dei_form_geography_label input').is(':checked');
+            if (livedExperience) {
+                out['geography'] = $('#'+this.css_id_prefix+'_geography_value').val();
             }
         }
 

@@ -24,12 +24,13 @@ function setup() {
     // Common options
     let PreferNotToSayAvailable = $('#setupForm [name="PreferNotToSay"]').val() == "1";
     let LivedExperienceAvailable = $('#setupForm [name="LivedExperience"]').val() == "1";
+    let GeographyAvailable = $('#setupForm [name="Geography"]').val() == "1";
     // Q1
     let q1option = $('#setupForm [name="Q1"]').val();
     if (q1option.substring(0, 5) == "ASKED") {
         $('#Q1FormWrapper').show();
         q1 = new question(
-            new form(codes, '#Q1Form', 'Q1-', 'formQ1-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, q1option),
+            new form(codes, '#Q1Form', 'Q1-', 'formQ1-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, GeographyAvailable, q1option),
             null
         );
         q1.form.start();
@@ -42,7 +43,7 @@ function setup() {
     if (q2option.substring(0, 5) == "ASKED") {
         $('#Q2FormWrapper').show();
         q2 = new question(
-            new form(codes, '#Q2Form', 'Q2-', 'formQ2-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, q2option),
+            new form(codes, '#Q2Form', 'Q2-', 'formQ2-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, GeographyAvailable, q2option),
             null
         );
         q2.form.start();
@@ -55,7 +56,7 @@ function setup() {
     if (q3option.substring(0, 5) == "ASKED") {
         $('#Q3FormWrapper').show();
         q3 = new question(
-            new form(codes, '#Q3Form', 'Q3-', 'formQ3-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, q3option),
+            new form(codes, '#Q3Form', 'Q3-', 'formQ3-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, GeographyAvailable, q3option),
             null
         );
         q3.form.start();

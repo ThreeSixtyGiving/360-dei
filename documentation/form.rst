@@ -52,6 +52,16 @@ Demo
 
             <div>
                 <label>
+                    Geography
+                    <select name="Geography">
+                        <option value="1" selected>Option is available</option>
+                        <option value="0">Option is not available</option>
+                    </select>
+                </label>
+            </div>
+
+            <div>
+                <label>
                     Lived Experience
                     <select name="LivedExperience">
                         <option value="1" selected>Option is available</option>

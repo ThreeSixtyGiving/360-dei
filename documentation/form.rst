@@ -77,6 +77,16 @@ Demo
 
             <div>
                 <label>
+                    This is general and is not aimed at or consists of a specific group of people
+                    <select name="General">
+                        <option value="1" selected>Option is available</option>
+                        <option value="0">Option is not available</option>
+                    </select>
+                </label>
+            </div>
+
+            <div>
+                <label>
                     Prefer not to say (Not recommended)
                     <select name="PreferNotToSay">
                         <option value="1">Option is available</option>

@@ -23,6 +23,7 @@ function setup() {
     $('#screenForm').show();
     // Common options
     let PreferNotToSayAvailable = $('#setupForm [name="PreferNotToSay"]').val() == "1";
+    let GeneralAvailable = $('#setupForm [name="General"]').val() == "1";
     let LivedExperienceAvailable = $('#setupForm [name="LivedExperience"]').val() == "1";
     let GeographyAvailable = $('#setupForm [name="Geography"]').val() == "1";
     // Q1
@@ -30,7 +31,7 @@ function setup() {
     if (q1option.substring(0, 5) == "ASKED") {
         $('#Q1FormWrapper').show();
         q1 = new question(
-            new form(codes, '#Q1Form', 'Q1-', 'formQ1-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, GeographyAvailable, q1option),
+            new form(codes, '#Q1Form', 'Q1-', 'formQ1-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, GeographyAvailable, GeneralAvailable, q1option),
             null
         );
         q1.form.start();
@@ -43,7 +44,7 @@ function setup() {
     if (q2option.substring(0, 5) == "ASKED") {
         $('#Q2FormWrapper').show();
         q2 = new question(
-            new form(codes, '#Q2Form', 'Q2-', 'formQ2-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, GeographyAvailable, q2option),
+            new form(codes, '#Q2Form', 'Q2-', 'formQ2-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, GeographyAvailable, GeneralAvailable, q2option),
             null
         );
         q2.form.start();
@@ -56,7 +57,7 @@ function setup() {
     if (q3option.substring(0, 5) == "ASKED") {
         $('#Q3FormWrapper').show();
         q3 = new question(
-            new form(codes, '#Q3Form', 'Q3-', 'formQ3-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, GeographyAvailable, q3option),
+            new form(codes, '#Q3Form', 'Q3-', 'formQ3-', questionCallback, PreferNotToSayAvailable, LivedExperienceAvailable, GeographyAvailable, GeneralAvailable, q3option),
             null
         );
         q3.form.start();

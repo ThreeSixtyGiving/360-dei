@@ -46,6 +46,7 @@ class form {
         prefer_not_to_say_option_available,
         lived_experience_option_available,
         geography_option_available,
+        general_option_available,
         asked_status
     ) {
         this.possible_answers_data = possible_answers_data;
@@ -56,6 +57,7 @@ class form {
         this.prefer_not_to_say_option_available = prefer_not_to_say_option_available;
         this.lived_experience_option_available = lived_experience_option_available;
         this.geography_option_available = geography_option_available;
+        this.general_option_available = general_option_available;
         this.asked_status = asked_status;
     }
     start() {
@@ -151,6 +153,15 @@ class form {
             html += '</label>';
             html += '</div>';
         }
+        if (this.general_option_available) {
+            html += '<div class="dei_form_general">';
+            html += '<label class="dei_form_general_label">';
+            html += '<input type="checkbox">';
+            html += 'This is general and is not aimed at or consists of a specific group of people';
+            html += '</label>';
+            html += '</div>';
+        }
+        console.log(this.general_option_available);
         html += '</div>';
 
         // Place Form
@@ -162,6 +173,13 @@ class form {
             $('#'+this.css_id_prefix+'_form .dei_form_prefer_not_to_say_label input').change(
                 function(event) {
                     class_instance.preferNotToSayChanged();
+                }
+            );
+        }
+        if (this.general_option_available) {
+            $('#'+this.css_id_prefix+'_form .dei_form_general_label input').change(
+                function(event) {
+                    class_instance.generalChanged();
                 }
             );
         }
@@ -251,6 +269,27 @@ class form {
                 '#'+this.css_id_prefix+'_form .dei_form_category_label input',
                 '#'+this.css_id_prefix+'_form .dei_form_sub_category_label input',
                 '#'+this.css_id_prefix+'_form .dei_form_lived_experience_label input',
+                '#'+this.css_id_prefix+'_form .dei_form_general_label input',
+            ];
+        if (val) {
+            $(selectors.join(", ")).prop('disabled', true);
+        } else {
+            $(selectors.join(", ")).prop('disabled', false);
+        }
+        if (this.on_data_change_callback) {
+            this.on_data_change_callback();
+        }
+    }
+
+    generalChanged() {
+        let val = $('#'+this.css_id_prefix+'_form .dei_form_general_label input').is(':checked');
+        let selectors = [
+                '#'+this.css_id_prefix+'_form .dei_form_geography_label input',
+                '#'+this.css_id_prefix+'_form .dei_form_population_group_label input',
+                '#'+this.css_id_prefix+'_form .dei_form_category_label input',
+                '#'+this.css_id_prefix+'_form .dei_form_sub_category_label input',
+                '#'+this.css_id_prefix+'_form .dei_form_lived_experience_label input',
+                '#'+this.css_id_prefix+'_form .dei_form_prefer_not_to_say_label input',
             ];
         if (val) {
             $(selectors.join(", ")).prop('disabled', true);
@@ -313,12 +352,24 @@ class form {
         if (this.geography_option_available) {
             out['available_options'].push('GEOGRAPHY');
         }
+        if (this.general_option_available) {
+            out['available_options'].push('GENERAL');
+        }
 
-        // Prefer not to say (This rules out all other options, so do this first and return straight away if so)
+        // Prefer not to say (This rules out all other options, so do this early and return straight away if so)
         if (this.prefer_not_to_say_option_available) {
             let preferNotToSayVal = $('#'+this.css_id_prefix+'_form .dei_form_prefer_not_to_say_label input').is(':checked');
             if (preferNotToSayVal) {
                 out['reply_status'] = 'REPLY_PREFER_NOT_TO_SAY';
+                return out;
+            }
+        }
+
+        // General (This rules out all other options, so do this early and return straight away if so)
+        if (this.general_option_available) {
+            let generalVal = $('#'+this.css_id_prefix+'_form .dei_form_general_label input').is(':checked');
+            if (generalVal) {
+                out['reply_status'] = 'REPLY_GENERAL';
                 return out;
             }
         }

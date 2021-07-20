@@ -17,7 +17,7 @@ project = 'ThreeSixtyGiving Standard Extension for DEI'
 copyright = '2021, 360Giving'
 author = '360Giving'
 
-extensions = ['threesixtygivingdei.sphinx.taxonomy', 'sphinxcontrib.jsonschema']
+extensions = ['threesixtygivingdei.sphinx.taxonomy', 'sphinxcontrib.jsonschema', 'sphinxcontrib.opendataservices']
 
 html_static_path = [
     '_static',

@@ -72,6 +72,27 @@ codes values
 
 The values in the codes array are from the taxonomy, and must follow the rules explained there. :ref:`taxonomy`
 
+Examples
+--------
+
+Not asked because not applicable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A funder has decided that these questions are not applicable and has not asked them at all.
+
+.. jsoninclude:: ../examples/not-asked-not-applicable.json
+    :jsonpointer:
+
+
+Asked after grant was made and no reply was received
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A funder has asked people it recently made grants to answer the DEI questions, but no reply has been received from the organisation.
+
+.. jsoninclude:: ../examples/asked-after-no-reply-received.json
+    :jsonpointer:
+
+
 JSON Schema
 -----------
 

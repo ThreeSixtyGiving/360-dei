@@ -1,5 +1,6 @@
 myst-parser
 sphinx-rtd-theme
+sphinxcontrib-opendataservices
 sphinxcontrib-opendataservices-jsonschema
 jsonmerge
 flattentool

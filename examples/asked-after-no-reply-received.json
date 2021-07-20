@@ -1,0 +1,31 @@
+{
+     "dei": {
+          "Q1": {
+               "asked_status": "ASKED_AFTER_APPLICATION",
+               "available_options": [
+                    "TAXONOMY",
+                    "LIVED_EXPERIENCE",
+                    "GEOGRAPHY"
+               ],
+               "reply_status": "NO_REPLY"
+          },
+          "Q2": {
+               "asked_status": "ASKED_AFTER_APPLICATION",
+               "available_options": [
+                    "TAXONOMY",
+                    "LIVED_EXPERIENCE",
+                    "GEOGRAPHY"
+               ],
+               "reply_status": "NO_REPLY"
+          },
+          "Q3": {
+               "asked_status": "ASKED_AFTER_APPLICATION",
+               "available_options": [
+                    "TAXONOMY",
+                    "LIVED_EXPERIENCE",
+                    "GEOGRAPHY"
+               ],
+               "reply_status": "NO_REPLY"
+          }
+     }
+}

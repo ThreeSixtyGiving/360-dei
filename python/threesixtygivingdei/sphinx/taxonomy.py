@@ -22,8 +22,8 @@ with open(taxonomy_data_file) as fp:
 
 
 class DEITaxonomy(LiteralInclude):
-    headers = ['Category', 'Name','Description', 'Sub-Category', 'Name','Description', ]
-    widths = [1, 1, 1, 1, 1,1]
+    headers = ['Category', 'Sub-Category', 'Name','Description', ]
+    widths = [1, 1, 1,1]
     option_spec = {
         'prefix': directives.unchanged,
     }
@@ -53,16 +53,12 @@ class DEITaxonomy(LiteralInclude):
         for category in data['categories']:
             row = nodes.row()
             row += self.cell(category['code'])
+            row += self.cell('')
             row += self.cell(category['name'])
             row += self.cell(category['description'])
-            row += self.cell('')
-            row += self.cell('')
-            row += self.cell('')
             tbody += row
             for sub_category in category['sub_categories']:
                 row = nodes.row()
-                row += self.cell('')
-                row += self.cell('')
                 row += self.cell('')
                 row += self.cell(sub_category['code'])
                 row += self.cell(sub_category['name'])

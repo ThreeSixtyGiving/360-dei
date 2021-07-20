@@ -78,8 +78,26 @@ class DEITaxonomy(LiteralInclude):
             entry += child
         return entry
 
+
+
+class DEITaxonomyPopulationGroupDescription(LiteralInclude):
+    option_spec = {
+        'prefix': directives.unchanged,
+    }
+
+    def run(self):
+        prefix = self.options['prefix']
+        data = [i for i in TAXONOMY_DATA['population_groups'] if i['prefix'] == prefix]
+        if data:
+            text = data[0]['description']
+            return to_docutils(text).children[:]
+        else:
+            return []
+
+
 def setup(app):
     app.add_directive('dei_taxonomy', DEITaxonomy)
+    app.add_directive('dei_taxonomy_population_group_description', DEITaxonomyPopulationGroupDescription )
 
 
 

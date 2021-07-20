@@ -1,4 +1,8 @@
+.. warning::
+    This is a work in progress. It has not been approved yet.
+
 .. _taxonomy:
+
 
 Taxonomy
 --------

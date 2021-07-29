@@ -2,72 +2,67 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {
     "DEI_Answer": {
-      "type": "object",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "asked_status": {
+            "title": "Asked Status",
+            "description": "How was this question asked?",
+            "type": "string",
+            "codelist": "askedStatus.csv"
+          },
+          "available_options": {
+            "title": "Available Options",
+            "description": "Which options were available when the question was asked?",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "codelist": "availableOptions.csv"
+            }
+          },
+          "reply_status": {
+            "title": "Reply Status",
+            "type": "string",
+            "codelist": "replyStatus.csv"
+          },
+          "codes": {
+            "title": "Taxonomy Codes",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "INSERT_ENUM_OF_ALL_CODES_HERE": true
+            }
+          },
+          "lived_experience": {
+            "title": "Lived Experience",
+            "type": "string"
+          },
+          "geography": {
+            "title": "Geography",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "Organization": {
       "properties": {
-        "asked_status": {
-          "title": "Asked Status",
-          "description": "How was this question asked?",
-          "type": "string",
-          "codelist": "askedStatus.csv"
+        "mission": {
+          "$ref": "#/definitions/DEI_Answer",
+          "title": "Information about the mission of this organisation"
         },
-        "available_options": {
-          "title": "Available Options",
-          "description": "Which options were available when the question was asked?",
-          "type": "array",
-          "items": {
-            "type": "string",
-            "codelist": "availableOptions.csv"
-          }
-        },
-        "reply_status": {
-          "title": "Reply Status",
-          "type": "string",
-          "codelist": "replyStatus.csv"
-        },
-        "codes": {
-          "title": "Taxonomy Codes",
-          "type": "array",
-          "items": {
-            "type": "string",
-            "INSERT_ENUM_OF_ALL_CODES_HERE": true
-          }
-        },
-        "lived_experience": {
-          "title": "Lived Experience",
-          "type": "string"
-        },
-        "geography": {
-          "title": "Geography",
-          "type": "string"
+        "leadership": {
+          "$ref": "#/definitions/DEI_Answer",
+          "title": "Information about the leadership of this organisation"
         }
-      },
-      "additionalProperties": false
+      }
     }
   },
   "properties": {
-    "dei": {
-      "type": "object",
-      "title": "DEI Data",
-      "properties": {
-        "Q1": {
-          "$ref": "#/definitions/DEI_Answer",
-          "title": "Data for Q1"
-        },
-        "Q2": {
-          "$ref": "#/definitions/DEI_Answer",
-          "title": "Data for Q2"
-        },
-        "Q3": {
-          "$ref": "#/definitions/DEI_Answer",
-          "title": "Data for Q3"
-        }
-      },
-      "required": [
-        "Q1",
-        "Q2",
-        "Q3"
-      ],
-      "additionalProperties": false
+    "beneficiaries": {
+      "$ref": "#/definitions/DEI_Answer",
+      "title": "Information about the beneficiaries"
     }
   }
 }

@@ -6,6 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: true
     - name: Setup python
       uses: actions/setup-python@v2
       with:
@@ -17,13 +19,13 @@ jobs:
         key: ${{ runner.os }}-taxonomypip
         restore-keys: |
           ${{ runner.os }}-taxonomypip
-    - run: pip install --upgrade jsonschema compiletojsonschema
+    - run: pip install --upgrade -r requirements.in
     # Check Taxanomy meets Taxonomy Schema
     - name: Check Taxanomy meets Taxonomy Schema
       run: jsonschema -i taxonomy/taxonomy.json taxonomy/schema/taxonomyschema.json
     # Check all examples match compiled schema
-    - name: Compile the extension schema
-      run:  "compiletojsonschema --codelist-base-directory codelists/ --set-additional-properties-false-everywhere  schema/360-giving-schema-extension.json > _compiled/360-giving-schema-only-extension.json"
+    - name: Compile
+      run:  "python compile.py"
     - name: Check all examples match compiled schema
-      run: "for f in examples/*; do   echo \"File: $f\"; jsonschema -i $f _compiled/360-giving-schema-only-extension.json || exit 1;   done"
+      run: "for f in examples/*; do   echo \"File: $f\"; jsonschema -i $f _compiled/360-giving-schema-including-extension.json || exit 1;   done"
 

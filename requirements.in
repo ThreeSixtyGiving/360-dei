@@ -4,4 +4,5 @@ sphinxcontrib-opendataservices
 sphinxcontrib-opendataservices-jsonschema
 jsonmerge
 flattentool
-compiletojsonschema
+compiletojsonschema>=0.4.0
+jsonschema

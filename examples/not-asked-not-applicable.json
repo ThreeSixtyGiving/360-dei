@@ -1,13 +1,35 @@
 {
-     "dei": {
-          "Q1": {
-               "asked_status": "NOT_ASKED_NOT_APPLICABLE"
-          },
-          "Q2": {
-               "asked_status": "NOT_ASKED_NOT_APPLICABLE"
-          },
-          "Q3": {
-               "asked_status": "NOT_ASKED_NOT_APPLICABLE"
-          }
-     }
+  "id": "test",
+  "title": "Test",
+  "description": "Test",
+  "currency": "GBP",
+  "amountAwarded": 1000,
+  "awardDate": "2021-01",
+  "fundingOrganization": [
+    {
+      "id": "Test",
+      "name": "Test"
+    }
+  ],
+  "beneficiaries": [
+    {
+      "asked_status": "NOT_ASKED_NOT_APPLICABLE"
+    }
+  ],
+  "recipientOrganization": [
+    {
+      "id": "Test",
+      "name": "Test",
+      "mission": [
+        {
+          "asked_status": "NOT_ASKED_NOT_APPLICABLE"
+        }
+      ],
+      "leadership": [
+        {
+          "asked_status": "NOT_ASKED_NOT_APPLICABLE"
+        }
+      ]
+    }
+  ]
 }

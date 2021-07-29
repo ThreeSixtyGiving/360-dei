@@ -1,31 +1,54 @@
 {
-     "dei": {
-          "Q1": {
-               "asked_status": "ASKED_AFTER_APPLICATION",
-               "available_options": [
-                    "TAXONOMY",
-                    "LIVED_EXPERIENCE",
-                    "GEOGRAPHY"
-               ],
-               "reply_status": "NO_REPLY"
-          },
-          "Q2": {
-               "asked_status": "ASKED_AFTER_APPLICATION",
-               "available_options": [
-                    "TAXONOMY",
-                    "LIVED_EXPERIENCE",
-                    "GEOGRAPHY"
-               ],
-               "reply_status": "NO_REPLY"
-          },
-          "Q3": {
-               "asked_status": "ASKED_AFTER_APPLICATION",
-               "available_options": [
-                    "TAXONOMY",
-                    "LIVED_EXPERIENCE",
-                    "GEOGRAPHY"
-               ],
-               "reply_status": "NO_REPLY"
-          }
-     }
+  "id": "test",
+  "title": "Test",
+  "description": "Test",
+  "currency": "GBP",
+  "amountAwarded": 1000,
+  "awardDate": "2021-01",
+  "fundingOrganization": [
+    {
+      "id": "Test",
+      "name": "Test"
+    }
+  ],
+  "beneficiaries": [
+    {
+      "asked_status": "ASKED_AFTER_APPLICATION",
+      "available_options": [
+        "TAXONOMY",
+        "LIVED_EXPERIENCE",
+        "GEOGRAPHY"
+      ],
+      "reply_status": "NO_REPLY"
+    }
+  ],
+  "recipientOrganization": [
+    {
+      "id": "Test",
+      "name": "Test",
+      "mission": [
+        {
+          "asked_status": "ASKED_AFTER_APPLICATION",
+          "available_options": [
+            "TAXONOMY",
+            "LIVED_EXPERIENCE",
+            "GEOGRAPHY"
+          ],
+          "reply_status": "NO_REPLY"
+        }
+      ],
+      "leadership": [
+        {
+          "asked_status": "ASKED_AFTER_APPLICATION",
+          "available_options": [
+            "TAXONOMY",
+            "LIVED_EXPERIENCE",
+            "GEOGRAPHY"
+          ],
+          "reply_status": "NO_REPLY"
+        }
+      ]
+    }
+  ]
 }
+

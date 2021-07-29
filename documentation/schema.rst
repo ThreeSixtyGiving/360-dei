@@ -12,18 +12,22 @@ Schema
 Overall schema
 ~~~~~~~~~~~~~~
 
-There is a place to put the data for each question:
+For each grant, there is a new key `beneficiaries`. This holds a list of data objects, which are defined in the next section.
+
+Each grant can have multiple `recipientOrganization` objects. Each of those objects has 2 new keys.
+
+* `mission`
+* `leadership`
+
+Both of these hold a list of data objects, which are defined in the next section.
+
+Each data object in a list
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For each of the 3 places listed in the previous section, the JSON for each data object in the list has the same structure. This is:
 
 .. jsonschema:: ../schema/360-giving-schema-extension.json
-  :collapse: dei/Q1,dei/Q2,dei/Q3
-
-For each question
-~~~~~~~~~~~~~~~~~
-
-The JSON for each question has the same structure, which is:
-
-.. jsonschema:: ../schema/360-giving-schema-extension.json
-  :pointer: /definitions/DEI_Answer
+  :pointer: /definitions/DEI_Answer/items
 
 asked_status values
 ~~~~~~~~~~~~~~~~~~~

@@ -4,20 +4,27 @@ import jsonmerge
 import os
 import flattentool
 from compiletojsonschema.compiletojsonschema import CompileToJsonSchema
+import copy
 
 def compile():
     root_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)),"..","..")
 
     # Compile Schema to add in codelists
     ctjs = CompileToJsonSchema(
-        os.path.join(root_dir, "schema", "360-giving-schema-extension.json"),
+        input_filename=os.path.join(root_dir, "schema", "360-giving-schema-extension.json"),
         codelist_base_directory=os.path.join(root_dir, "codelists")
     )
     schema = ctjs.get()
-    # Definitons will now have been dereffed, so we don't need them any more
-    del schema['definitions']
 
-    # Add in our taxonoym codes
+    ctjs_definition_organisation = CompileToJsonSchema(
+        input_schema=copy.deepcopy(schema['definitions']['Organization']),
+        codelist_base_directory=os.path.join(root_dir, "codelists")
+    )
+    schema['definitions']['Organization'] = ctjs_definition_organisation.get()
+
+    del  schema['definitions']['DEI_Answer']
+
+    # Add in our taxonomy codes
     build_schema_file_with_codes(
         schema=schema,
         output_filename=os.path.join(root_dir, "_compiled",  "360-giving-schema-only-extension.json"),

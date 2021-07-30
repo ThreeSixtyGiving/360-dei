@@ -34,9 +34,13 @@
               "INSERT_ENUM_OF_ALL_CODES_HERE": true
             }
           },
-          "lived_experience": {
-            "title": "Lived Experience",
-            "type": "string"
+          "classification_entered": {
+            "title": "Classification Entered",
+            "description": "Classifications provided that are not from a vocabulary like Lived Experience can be entered here.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "geography": {
             "title": "Geography",

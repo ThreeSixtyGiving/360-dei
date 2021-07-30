@@ -377,8 +377,9 @@ class form {
         // Lived Experience
         if (this.lived_experience_option_available) {
             let livedExperience = $('#'+this.css_id_prefix+'_form .dei_form_lived_experience_label input').is(':checked');
-            if (livedExperience) {
-                out['lived_experience'] = $('#'+this.css_id_prefix+'_lived_experience_value').val();
+            let livedExperienceValue = $('#'+this.css_id_prefix+'_lived_experience_value').val();
+            if (livedExperience && livedExperienceValue) {
+                out['classification_entered'] = [livedExperienceValue];
             }
         }
 

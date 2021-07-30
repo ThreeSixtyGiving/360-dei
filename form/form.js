@@ -388,7 +388,7 @@ class form {
             let geography = $('#'+this.css_id_prefix+'_form .dei_form_geography_label input').is(':checked');
             let geographyValue = $('#'+this.css_id_prefix+'_geography_value').val();
             if (geography && geographyValue) {
-                out['geography'] = geographyValue;
+                out['location'] = [ { "description":geographyValue} ];
             }
         }
 

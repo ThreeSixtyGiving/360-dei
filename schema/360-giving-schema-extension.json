@@ -42,9 +42,9 @@
               "type": "string"
             }
           },
-          "geography": {
-            "title": "Geography",
-            "type": "string"
+          "location": {
+            "type": "array",
+            "INSERT_LOCATION_BLOCK_AS_ITEMS_HERE": true
           }
         },
         "additionalProperties": false

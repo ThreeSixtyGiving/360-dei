@@ -25,7 +25,8 @@ def compile():
     del  schema['definitions']['DEI_Answer']
 
     # Add in our taxonomy codes
-    build_schema_file_with_codes(
+    build_schema_file_with_codes_and_bits_copied_from_standard(
+        standard_schema_filename=os.path.join(root_dir, "standard", "schema", "360-giving-schema.json"),
         schema=schema,
         output_filename=os.path.join(root_dir, "_compiled",  "360-giving-schema-only-extension.json"),
         taxonomy_filename=os.path.join(root_dir, "taxonomy", "taxonomy.json"),
@@ -60,14 +61,20 @@ def compile():
 
 
 
-def build_schema_file_with_codes(schema, output_filename, taxonomy_filename):
+def build_schema_file_with_codes_and_bits_copied_from_standard(standard_schema_filename, schema, output_filename, taxonomy_filename):
     taxonomy = Taxonomy(taxonomy_filename)
     codes = taxonomy.get_all_codes()
+    with open(standard_schema_filename) as fp:
+        standard_schema = json.load(fp)
 
     def _check(schema_to_check):
         if schema_to_check.get("INSERT_ENUM_OF_ALL_CODES_HERE"):
             schema_to_check['enum'] = codes
             del schema_to_check['INSERT_ENUM_OF_ALL_CODES_HERE']
+            return
+        if schema_to_check.get("INSERT_LOCATION_BLOCK_AS_ITEMS_HERE"):
+            schema_to_check['items'] = standard_schema['definitions']['Location']
+            del schema_to_check['INSERT_LOCATION_BLOCK_AS_ITEMS_HERE']
             return
         for k,v in schema_to_check.items():
             if isinstance(v, dict):

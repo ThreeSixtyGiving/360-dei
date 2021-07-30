@@ -26,8 +26,8 @@ Each data object in a list
 
 For each of the 3 places listed in the previous section, the JSON for each data object in the list has the same structure. This is:
 
-.. jsonschema:: ../schema/360-giving-schema-extension.json
-  :pointer: /definitions/DEI_Answer/items
+.. jsonschema:: ../_compiled/360-giving-schema-only-extension.json
+  :pointer: /properties/beneficiaries/items
 
 asked_status values
 ~~~~~~~~~~~~~~~~~~~

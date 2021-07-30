@@ -26,13 +26,10 @@
             "type": "string",
             "codelist": "replyStatus.csv"
           },
-          "codes": {
-            "title": "Taxonomy Codes",
+          "classification": {
+            "title": "Classification from Taxonomies",
             "type": "array",
-            "items": {
-              "type": "string",
-              "INSERT_ENUM_OF_ALL_CODES_HERE": true
-            }
+            "INSERT_CLASSIFICATION_BLOCK_AS_ITEMS_HERE": true
           },
           "classification_entered": {
             "title": "Classification Entered",

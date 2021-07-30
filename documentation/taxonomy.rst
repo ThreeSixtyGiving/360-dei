@@ -7,6 +7,9 @@
 Taxonomy
 --------
 
+This is the `DEI` taxonomy for use with this extension. The `vocabulary` value should be `DEI` when this is used.
+
+It is possible to use other taxonomies with this extension.
 
 Machine Readable
 ================

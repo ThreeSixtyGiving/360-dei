@@ -401,11 +401,11 @@ class form {
             if (population_group_element.is(':checked')) {
                 var cat_or_subcat_checked_elements = $('#'+this.css_id_prefix+'_population_group_'+population_group['prefix']+ ' .dei_form_category input:checked');
                 if (cat_or_subcat_checked_elements.length > 0) {
-                    codes_out.push(cat_or_subcat_checked_elements.attr('value'));
+                    codes_out.push({"vocabulary":"DEI", "code":cat_or_subcat_checked_elements.attr('value')});
                 }
             }
         }
-        out['codes'] = codes_out;
+        out['classification'] = codes_out;
 
         return out;
     }

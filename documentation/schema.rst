@@ -24,10 +24,19 @@ Both of these hold a list of data objects, which are defined in the next section
 Each data object in a list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For each of the 3 places listed in the previous section, the JSON for each data object in the list has the same structure. This is:
+For each of the 3 places listed in the previous section, the JSON for each data object in the list has the same structure. This is described in 2 sections.
+
+The first section contain fields for storing information about how the question was asked and responded to:
 
 .. jsonschema:: ../_compiled/360-giving-schema-only-extension.json
   :pointer: /properties/beneficiaries/items
+  :include: dei_asked_status,dei_available_options,dei_reply_status
+
+The second section contains fields for storing information about the answer:
+
+.. jsonschema:: ../_compiled/360-giving-schema-only-extension.json
+  :pointer: /properties/beneficiaries/items
+  :include: classification,classification_entered,location
 
 asked_status values
 ~~~~~~~~~~~~~~~~~~~

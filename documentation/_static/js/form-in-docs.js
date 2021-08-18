@@ -26,6 +26,13 @@ function setup() {
     let GeneralAvailable = $('#setupForm [name="General"]').val() == "1";
     let LivedExperienceAvailable = $('#setupForm [name="LivedExperience"]').val() == "1";
     let GeographyAvailable = $('#setupForm [name="Geography"]').val() == "1";
+    let answers = codes.getAnswers();
+    for(let idx in answers) {
+        codes.setPopulationGroup(
+            answers[idx]['prefix'],
+            $('#screenSetupClassificationOptions [value="'+answers[idx]['prefix']+'"]').is(':checked')
+        );
+    }
     // Q1
     let q1option = $('#setupForm [name="Q1"]').val();
     if (q1option.substring(0, 5) == "ASKED") {
@@ -70,9 +77,15 @@ function setup() {
 }
 
 $( document ).ready(function() {
-    codes = new possible_answers_data("taxonomy.json");
+    codes = new selected_possible_answers_data("taxonomy.json");
     codes.start(
         function() {
+            let answers = codes.getAnswers();
+            for(let idx in answers) {
+                $('#screenSetupClassificationOptions').append(
+                    '<div><label><input type="checkbox" name="" value="'+answers[idx]['prefix']+'" checked> Include Population Group: '+answers[idx]['name']+'</label></div>'
+                );
+            }
             $('#screenSetup').show();
         }
     )

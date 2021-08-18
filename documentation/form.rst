@@ -55,6 +55,9 @@ Demo
                 </label>
             </div>
 
+            <div id="screenSetupClassificationOptions">
+            </div>
+
             <div>
                 <label>
                     Geography

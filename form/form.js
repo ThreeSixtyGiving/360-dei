@@ -19,7 +19,7 @@ class possible_answers_data {
     hasData() {
         return this.data != null;
     }
-    getPopulationGroups() {
+    getAnswers() {
         return this.data['population_groups'];
     }
     getOtherCategoryInPopulationGroupPrefix(population_group_prefix) {
@@ -33,6 +33,42 @@ class possible_answers_data {
                 }
             }
         }
+    }
+}
+
+class selected_possible_answers_data extends possible_answers_data {
+    start(callback) {
+        var class_instance = this;
+        $.ajax({
+          method: "GET",
+          url: this.url,
+        })
+        .done(function( msg ) {
+          for (let idx in msg['population_groups']) {
+            msg['population_groups'][idx]['selected'] = true;
+          }
+          class_instance.data = msg;
+          if (callback) {
+            callback(this);
+          }
+        });
+    }
+    setPopulationGroup(population_group_prefix, value) {
+        for (let idx in this.data['population_groups']) {
+            if (this.data['population_groups'][idx]['prefix'] == population_group_prefix) {
+                this.data['population_groups'][idx]['selected'] = value;
+                return;
+            }
+        }
+    }
+    getAnswers() {
+        let out = []
+        for (let idx in this.data['population_groups']) {
+            if (this.data['population_groups'][idx]['selected']) {
+                out[idx] = this.data['population_groups'][idx]
+            }
+        }
+        return out;
     }
 }
 
@@ -62,7 +98,7 @@ class form {
     }
     start() {
         // Handy vars
-        let population_groups = this.possible_answers_data.getPopulationGroups();
+        let population_groups = this.possible_answers_data.getAnswers();
 
 
         // Build HTML of form
@@ -338,10 +374,12 @@ class form {
     }
 
     getData() {
+        let population_groups = this.possible_answers_data.getAnswers();
         let out = {
             "dei_asked_status": this.asked_status,
             "dei_available_options": ["TAXONOMY"],
-            "dei_reply_status": "REPLY_GOT"
+            "dei_reply_status": "REPLY_GOT",
+            "dei_classification_available_options": []
         }
         if (this.prefer_not_to_say_option_available) {
             out['dei_available_options'].push('PREFER_NOT_TO_SAY');
@@ -354,6 +392,17 @@ class form {
         }
         if (this.general_option_available) {
             out['dei_available_options'].push('GENERAL');
+        }
+        for (let idx in population_groups) {
+            let population_group = population_groups[idx];
+            for (let category_idx in population_group['categories']) {
+                let category = population_group['categories'][category_idx];
+                out['dei_classification_available_options'].push({"vocabulary":"DEI", "code":category['code'],"title":category['name'], "description":category['description']});
+                for (let sub_category_idx in category['sub_categories']) {
+                    let sub_category =  category['sub_categories'][sub_category_idx];
+                    out['dei_classification_available_options'].push({"vocabulary":"DEI", "code":sub_category['code'],"title":sub_category['name'], "description":sub_category['description']});
+                }
+            }
         }
 
         // Prefer not to say (This rules out all other options, so do this early and return straight away if so)
@@ -394,7 +443,6 @@ class form {
 
         // Get codes!
         let codes_out = [];
-        let population_groups = this.possible_answers_data.getPopulationGroups();
         for (let idx in population_groups) {
             let population_group = population_groups[idx];
             var population_group_element = $('#'+this.css_id_prefix+'_population_group_'+population_group['prefix']+ ' .dei_form_population_group_label input');

@@ -30,7 +30,7 @@ The first section contain fields for storing information about how the question 
 
 .. jsonschema:: ../_compiled/360-giving-schema-only-extension.json
   :pointer: /properties/project/items
-  :include: dei_asked_status,dei_available_options,dei_reply_status
+  :include: dei_asked_status,dei_available_options,dei_classification_available_options,dei_reply_status
 
 The second section contains fields for storing information about the answer:
 

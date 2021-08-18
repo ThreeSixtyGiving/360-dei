@@ -22,7 +22,8 @@ def compile():
     )
     schema['definitions']['Organization'] = ctjs_definition_organisation.get()
 
-    del  schema['definitions']['DEI_Answer']
+    del schema['definitions']['DEI_Answer']
+    del schema['definitions']['DEI_Classification']
 
     with open(os.path.join(root_dir, "_compiled",  "360-giving-schema-only-extension.json"), "w") as fp:
         json.dump(schema, fp, indent=4)

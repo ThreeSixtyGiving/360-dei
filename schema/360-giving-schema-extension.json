@@ -1,6 +1,41 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {
+    "DEI_Classification": {
+      "type": "object",
+      "properties": {
+          "vocabulary": {
+            "type": "string",
+            "description": "A vocabulary used for this classification.",
+            "title": "Vocabulary"
+          },
+          "code": {
+            "type": "string",
+            "description": "A codelist value in the chosen vocabulary.",
+            "title": "Code"
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The title of this classification.",
+            "title": "Title"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "A description of this classification.",
+            "title": "Description"
+          }
+      },
+      "required": [
+        "vocabulary",
+        "code"
+      ]
+    },
     "DEI_Answer": {
       "type": "array",
       "items": {
@@ -21,6 +56,14 @@
               "codelist": "availableOptions.csv"
             }
           },
+          "dei_classification_available_options": {
+            "title": "Classifications from Taxonomies available options",
+            "description": "Classifications from Taxonomies which were available when the question was asked?",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DEI_Classification"
+            }
+          },
           "dei_reply_status": {
             "title": "Reply Status",
             "type": "string",
@@ -30,39 +73,7 @@
             "title": "Classification from Taxonomies",
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                  "vocabulary": {
-                    "type": "string",
-                    "description": "A vocabulary used for this classification.",
-                    "title": "Vocabulary"
-                  },
-                  "code": {
-                    "type": "string",
-                    "description": "A codelist value in the chosen vocabulary.",
-                    "title": "Code"
-                  },
-                  "title": {
-                    "type": [
-                      "string",
-                      "null"
-                    ],
-                    "description": "The title of this classification.",
-                    "title": "Title"
-                  },
-                  "description": {
-                    "type": [
-                      "string",
-                      "null"
-                    ],
-                    "description": "A description of this classification.",
-                    "title": "Description"
-                  }
-              },
-              "required": [
-                "vocabulary",
-                "code"
-              ]
+              "$ref": "#/definitions/DEI_Classification"
             }
           },
           "classification_entered": {

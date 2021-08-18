@@ -6,13 +6,13 @@
       "items": {
         "type": "object",
         "properties": {
-          "asked_status": {
+          "dei_asked_status": {
             "title": "Asked Status",
             "description": "How was this question asked?",
             "type": "string",
             "codelist": "askedStatus.csv"
           },
-          "available_options": {
+          "dei_available_options": {
             "title": "Available Options",
             "description": "Which options were available when the question was asked?",
             "type": "array",
@@ -21,7 +21,7 @@
               "codelist": "availableOptions.csv"
             }
           },
-          "reply_status": {
+          "dei_reply_status": {
             "title": "Reply Status",
             "type": "string",
             "codelist": "replyStatus.csv"

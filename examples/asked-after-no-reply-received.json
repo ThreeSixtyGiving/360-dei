@@ -13,13 +13,13 @@
   ],
   "beneficiaries": [
     {
-      "asked_status": "ASKED_AFTER_APPLICATION",
-      "available_options": [
+      "dei_asked_status": "ASKED_AFTER_APPLICATION",
+      "dei_available_options": [
         "TAXONOMY",
         "LIVED_EXPERIENCE",
         "GEOGRAPHY"
       ],
-      "reply_status": "NO_REPLY"
+      "dei_reply_status": "NO_REPLY"
     }
   ],
   "recipientOrganization": [
@@ -28,24 +28,24 @@
       "name": "Test",
       "mission": [
         {
-          "asked_status": "ASKED_AFTER_APPLICATION",
-          "available_options": [
+          "dei_asked_status": "ASKED_AFTER_APPLICATION",
+          "dei_available_options": [
             "TAXONOMY",
             "LIVED_EXPERIENCE",
             "GEOGRAPHY"
           ],
-          "reply_status": "NO_REPLY"
+          "dei_reply_status": "NO_REPLY"
         }
       ],
       "leadership": [
         {
-          "asked_status": "ASKED_AFTER_APPLICATION",
-          "available_options": [
+          "dei_asked_status": "ASKED_AFTER_APPLICATION",
+          "dei_available_options": [
             "TAXONOMY",
             "LIVED_EXPERIENCE",
             "GEOGRAPHY"
           ],
-          "reply_status": "NO_REPLY"
+          "dei_reply_status": "NO_REPLY"
         }
       ]
     }

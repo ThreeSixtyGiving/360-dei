@@ -339,21 +339,21 @@ class form {
 
     getData() {
         let out = {
-            "asked_status": this.asked_status,
-            "available_options": ["TAXONOMY"],
-            "reply_status": "REPLY_GOT"
+            "dei_asked_status": this.asked_status,
+            "dei_available_options": ["TAXONOMY"],
+            "dei_reply_status": "REPLY_GOT"
         }
         if (this.prefer_not_to_say_option_available) {
-            out['available_options'].push('PREFER_NOT_TO_SAY');
+            out['dei_available_options'].push('PREFER_NOT_TO_SAY');
         }
         if (this.lived_experience_option_available) {
-            out['available_options'].push('LIVED_EXPERIENCE');
+            out['dei_available_options'].push('LIVED_EXPERIENCE');
         }
         if (this.geography_option_available) {
-            out['available_options'].push('GEOGRAPHY');
+            out['dei_available_options'].push('GEOGRAPHY');
         }
         if (this.general_option_available) {
-            out['available_options'].push('GENERAL');
+            out['dei_available_options'].push('GENERAL');
         }
 
         // Prefer not to say (This rules out all other options, so do this early and return straight away if so)

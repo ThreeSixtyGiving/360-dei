@@ -13,7 +13,7 @@
   ],
   "beneficiaries": [
     {
-      "asked_status": "NOT_ASKED_NOT_APPLICABLE"
+      "dei_asked_status": "NOT_ASKED_NOT_APPLICABLE"
     }
   ],
   "recipientOrganization": [
@@ -22,12 +22,12 @@
       "name": "Test",
       "mission": [
         {
-          "asked_status": "NOT_ASKED_NOT_APPLICABLE"
+          "dei_asked_status": "NOT_ASKED_NOT_APPLICABLE"
         }
       ],
       "leadership": [
         {
-          "asked_status": "NOT_ASKED_NOT_APPLICABLE"
+          "dei_asked_status": "NOT_ASKED_NOT_APPLICABLE"
         }
       ]
     }

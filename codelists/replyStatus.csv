@@ -3,4 +3,4 @@ NO_REPLY,No Reply, No Reply was received
 REPLY_GOT,Reply Got,Note it is possible for a reply to have been received but no data was actually provided and thus other reply fields will be blank
 REPLY_GOT_BUT_NO_PERMISSIONS,Reply Got but no permissions, A reply was got but you do not have permissions to see this reply
 REPLY_GENERAL,Reply was General, This is general and is not aimed at or consists of a specific group of people
-REPLY_PREFER_NOT_TO_SAY, Reply was Prefer not to say, Use of this option is discouraged but should be logged if
+REPLY_PREFER_NOT_TO_SAY, Reply was Prefer not to say, Reply was Prefer not to say

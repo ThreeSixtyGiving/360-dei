@@ -29,7 +29,41 @@
           "classification": {
             "title": "Classification from Taxonomies",
             "type": "array",
-            "INSERT_CLASSIFICATION_BLOCK_AS_ITEMS_HERE": true
+            "items": {
+              "type": "object",
+              "properties": {
+                  "vocabulary": {
+                    "type": "string",
+                    "description": "A vocabulary used for this classification.",
+                    "title": "Vocabulary"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "A codelist value in the chosen vocabulary.",
+                    "title": "Code"
+                  },
+                  "title": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "description": "The title of this classification.",
+                    "title": "Title"
+                  },
+                  "description": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "description": "A description of this classification.",
+                    "title": "Description"
+                  }
+              },
+              "required": [
+                "vocabulary",
+                "code"
+              ]
+            }
           },
           "classification_entered": {
             "title": "Classification Entered",
@@ -41,7 +75,17 @@
           },
           "location": {
             "type": "array",
-            "INSERT_LOCATION_BLOCK_AS_ITEMS_HERE": true
+            "items": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "description": "A description of this location.",
+                  "title": "Description"
+                }
+              },
+              "required": ["description"]
+            }
           }
         },
         "additionalProperties": false

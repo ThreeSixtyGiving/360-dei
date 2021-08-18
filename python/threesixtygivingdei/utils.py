@@ -24,12 +24,8 @@ def compile():
 
     del  schema['definitions']['DEI_Answer']
 
-    # Add in our taxonomy codes
-    build_schema_file_with_bits_copied_from_standard(
-        standard_schema_filename=os.path.join(root_dir, "standard", "schema", "360-giving-schema.json"),
-        schema=schema,
-        output_filename=os.path.join(root_dir, "_compiled",  "360-giving-schema-only-extension.json"),
-    )
+    with open(os.path.join(root_dir, "_compiled",  "360-giving-schema-only-extension.json"), "w") as fp:
+        json.dump(schema, fp, indent=4)
 
     # Build one schema file with standard AND extensions
     build_schema_file_with_standard_and_extension(
@@ -57,29 +53,6 @@ def compile():
             rollup=True,
             use_titles=True,
         )
-
-
-
-def build_schema_file_with_bits_copied_from_standard(standard_schema_filename, schema, output_filename):
-    with open(standard_schema_filename) as fp:
-        standard_schema = json.load(fp)
-
-    def _check(schema_to_check):
-        if schema_to_check.get("INSERT_LOCATION_BLOCK_AS_ITEMS_HERE"):
-            schema_to_check['items'] = standard_schema['definitions']['Location']
-            del schema_to_check['INSERT_LOCATION_BLOCK_AS_ITEMS_HERE']
-            return
-        if schema_to_check.get("INSERT_CLASSIFICATION_BLOCK_AS_ITEMS_HERE"):
-            schema_to_check['items'] = standard_schema['definitions']['Classification']
-            del schema_to_check['INSERT_CLASSIFICATION_BLOCK_AS_ITEMS_HERE']
-            return
-        for k,v in schema_to_check.items():
-            if isinstance(v, dict):
-                _check(v)
-
-    _check(schema)
-    with open(output_filename, "w") as fp:
-        json.dump(schema, fp, indent=4)
 
 
 def build_schema_file_with_standard_and_extension(standard_schema_filename, extension_schema_filename, output_filename):

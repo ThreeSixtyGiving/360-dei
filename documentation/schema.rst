@@ -12,7 +12,7 @@ Schema
 Overall schema
 ~~~~~~~~~~~~~~
 
-For each grant, there is a new key `beneficiaries`. This holds a list of data objects, which are defined in the next section.
+For each grant, there is a new key `project`. This holds a list of data objects, which are defined in the next section.
 
 Each grant can have multiple `recipientOrganization` objects. Each of those objects has 2 new keys.
 
@@ -29,13 +29,13 @@ For each of the 3 places listed in the previous section, the JSON for each data 
 The first section contain fields for storing information about how the question was asked and responded to:
 
 .. jsonschema:: ../_compiled/360-giving-schema-only-extension.json
-  :pointer: /properties/beneficiaries/items
+  :pointer: /properties/project/items
   :include: dei_asked_status,dei_available_options,dei_reply_status
 
 The second section contains fields for storing information about the answer:
 
 .. jsonschema:: ../_compiled/360-giving-schema-only-extension.json
-  :pointer: /properties/beneficiaries/items
+  :pointer: /properties/project/items
   :include: classification,classification_entered,location
 
 asked_status values

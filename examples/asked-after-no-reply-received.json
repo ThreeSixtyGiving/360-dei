@@ -11,7 +11,7 @@
       "name": "Test"
     }
   ],
-  "beneficiaries": [
+  "project": [
     {
       "dei_asked_status": "ASKED_AFTER_APPLICATION",
       "dei_available_options": [

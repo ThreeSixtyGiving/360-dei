@@ -105,9 +105,9 @@
     }
   },
   "properties": {
-    "beneficiaries": {
+    "project": {
       "$ref": "#/definitions/DEI_Answer",
-      "title": "Information about the beneficiaries"
+      "title": "Information about the project"
     }
   }
 }

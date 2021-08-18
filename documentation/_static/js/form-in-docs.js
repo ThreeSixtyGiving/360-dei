@@ -82,7 +82,7 @@ function questionCallback() {
     $('#JSONOut').val(
         JSON.stringify(
             {
-                'beneficiaries': [ q1.getData() ],
+                'project': [ q1.getData() ],
                 'recipientOrganization': [
                     {
                         'mission': [ q2.getData() ],

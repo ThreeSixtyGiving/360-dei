@@ -86,6 +86,13 @@ $( document ).ready(function() {
     codes = new selected_possible_answers_data("taxonomy.json");
     codes.start(
         function() {
+            // Hand change some taxonomy names for this form
+            for (let idx in codes.data['population_groups']) {
+                if (codes.data['population_groups'][idx]['prefix'] == 'DEI80') {
+                    codes.data['population_groups'][idx]['name'] = "Northern Ireland: Community Background";
+                }
+            }
+            // Add population groups to setup form
             let answers = codes.getAnswers();
             for(let idx in answers) {
                 let checked = answers[idx]['prefix'] != 'DEI70' && answers[idx]['prefix'] != 'DEI80' ? ' checked' : '';
@@ -93,6 +100,7 @@ $( document ).ready(function() {
                     '<div><label><input type="checkbox" name="" value="'+answers[idx]['prefix']+'"'+checked+'> Include Population Group: '+answers[idx]['name']+'</label></div>'
                 );
             }
+            // Show setup form
             $('#screenSetup').show();
         }
     )

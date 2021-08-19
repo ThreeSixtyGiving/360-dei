@@ -22,15 +22,12 @@ class possible_answers_data {
     getAnswers() {
         return this.data['population_groups'];
     }
-    getOtherCategoryInPopulationGroupPrefix(population_group_prefix) {
-        for (let idx in this.data['population_groups']) {
-            if (this.data['population_groups'][idx]['prefix'] == population_group_prefix) {
-                for (let category_idx in this.data['population_groups'][idx]['categories']) {
-                    let category = this.data['population_groups'][idx]['categories'][category_idx];
-                    if (category['is_other_option_in_population_group']) {
-                        return category;
-                    }
-                }
+    getDefaultCategoryInPopulationGroupPrefix(population_group_prefix) {
+        let chosen_population_groups = this.data['population_groups'].filter(population_group => population_group['prefix'] == population_group_prefix)
+        if (chosen_population_groups) {
+            let other_categories = chosen_population_groups[0]['categories'].filter(category => category['is_other_option_in_population_group']);
+            if (other_categories) {
+                return other_categories[0];
             }
         }
     }
@@ -46,6 +43,12 @@ class selected_possible_answers_data extends possible_answers_data {
         .done(function( msg ) {
           for (let idx in msg['population_groups']) {
             msg['population_groups'][idx]['selected'] = true;
+            for (let category_idx in msg['population_groups'][idx]['categories']) {
+                msg['population_groups'][idx]['categories'][category_idx]['selected'] = true;
+                for (let sub_category_idx in msg['population_groups'][idx]['categories'][category_idx]['sub_categories']) {
+                    msg['population_groups'][idx]['categories'][category_idx]['sub_categories'][sub_category_idx]['selected'] = true;
+                }
+            }
           }
           class_instance.data = msg;
           if (callback) {
@@ -61,14 +64,61 @@ class selected_possible_answers_data extends possible_answers_data {
             }
         }
     }
-    getAnswers() {
-        let out = []
+    deselectAllCategoriesAndSubCategories() {
         for (let idx in this.data['population_groups']) {
-            if (this.data['population_groups'][idx]['selected']) {
-                out[idx] = this.data['population_groups'][idx]
+            let has_top_level_option = this.data['population_groups'][idx]['categories'].filter(category => category['is_top_level_option_in_population_group']);
+            if (has_top_level_option.length) {
+                for (let category_idx in this.data['population_groups'][idx]['categories']) {
+                    if (!this.data['population_groups'][idx]['categories'][category_idx]['is_top_level_option_in_population_group']) {
+                        this.data['population_groups'][idx]['categories'][category_idx]['selected'] = false;
+                    }
+                    for (let sub_category_idx in this.data['population_groups'][idx]['categories'][category_idx]['sub_categories']) {
+                        this.data['population_groups'][idx]['categories'][category_idx]['sub_categories'][sub_category_idx]['selected'] = false;
+                    }
+                }
+            } else {
+                this.data['population_groups'][idx]['selected'] = false;
+                // We could also deselect all categories and subcategories here, but we don't have to
+                // If population group not selected, getAnswers() function won't send them anyway.
+            }
+        }
+    }
+    deselectAllSubCategories() {
+        for (let idx in this.data['population_groups']) {
+            for (let category_idx in this.data['population_groups'][idx]['categories']) {
+                for (let sub_category_idx in this.data['population_groups'][idx]['categories'][category_idx]['sub_categories']) {
+                    this.data['population_groups'][idx]['categories'][category_idx]['sub_categories'][sub_category_idx]['selected'] = false;
+                }
+            }
+        }
+    }
+    getAnswers() {
+        // Filter Population groups
+        let out = this.data['population_groups'].filter(population_group => population_group['selected']);
+        for (let idx in out) {
+            // Filter categories
+            out[idx]['categories'] = out[idx]['categories'].filter(category => category['selected']);
+            for (let category_idx in out[idx]['categories']) {
+                // Filter sub categories
+                out[idx]['categories'][category_idx]['sub_categories'] = out[idx]['categories'][category_idx]['sub_categories'].filter(sub_category => sub_category['selected']);
             }
         }
         return out;
+    }
+    getDefaultCategoryInPopulationGroupPrefix(population_group_prefix) {
+        let chosen_population_groups = this.data['population_groups'].filter(population_group => population_group['prefix'] == population_group_prefix && population_group['selected'])
+        if (chosen_population_groups) {
+            // Look for is_other_option_in_population_group first
+            let other_categories_1 = chosen_population_groups[0]['categories'].filter(category => (category['is_other_option_in_population_group'] && category['selected']));
+            if (other_categories_1.length) {
+                return other_categories_1[0];
+            }
+            // If not there (because not selected) look for is_other_option_in_population_group
+            let other_categories_2 = chosen_population_groups[0]['categories'].filter(category => category['is_top_level_option_in_population_group'] && category['selected']);
+            if (other_categories_2.length) {
+                return other_categories_2[0];
+            }
+        }
     }
 }
 
@@ -131,7 +181,7 @@ class form {
             }
             if (population_group['categories']) {
                 html += '<div class="dei_form_population_group_options">';
-                if (!this.possible_answers_data.getOtherCategoryInPopulationGroupPrefix(population_group['prefix'])) {
+                if (!this.possible_answers_data.getDefaultCategoryInPopulationGroupPrefix(population_group['prefix'])) {
                     // This is a special population group with no "other" option we can select by default for the user.
                     // So instead, we must have a warning ready to show them
                     html += '<div class="dei_form_must_select_one_in_population_group_warning">You must select one of the following options!</div>'
@@ -274,7 +324,7 @@ class form {
 
             var cat_or_subcat_checked_elements = $('#'+this.css_id_prefix+'_population_group_'+prefix+ ' .dei_form_category input:checked');
             if (cat_or_subcat_checked_elements.length == 0) {
-                let other_category = this.possible_answers_data.getOtherCategoryInPopulationGroupPrefix(prefix);
+                let other_category = this.possible_answers_data.getDefaultCategoryInPopulationGroupPrefix(prefix);
                 if (other_category) {
                     $('#'+this.css_id_prefix+'_population_group_'+prefix+ ' input[name="'+this.form_element_prefix+prefix+'"][value="'+other_category['code']+'"]').attr(
                         'checked',

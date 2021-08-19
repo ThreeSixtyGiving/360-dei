@@ -60,6 +60,17 @@ Demo
 
             <div>
                 <label>
+                    Include
+                    <select name="selected_answers">
+                        <option value="all" selected>Population Groups & Categories & Subcategories (everything)</option>
+                        <option value="categories">Population Groups & Categories only</option>
+                        <option value="population_groups">Population Groups only (where possible)</option>
+                    </select>
+                </label>
+            </div>
+
+            <div>
+                <label>
                     Geography
                     <select name="Geography">
                         <option value="1" selected>Option is available</option>

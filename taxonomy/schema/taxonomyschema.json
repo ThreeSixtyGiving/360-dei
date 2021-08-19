@@ -33,6 +33,9 @@
                 "is_other_option_in_population_group": {
                   "type": "boolean"
                 },
+                "is_top_level_option_in_population_group": {
+                  "type": "boolean"
+                },
                 "sub_categories": {
                   "type": "array",
                   "items": {

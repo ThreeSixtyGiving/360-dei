@@ -10,6 +10,7 @@
           "name": "Communities experiencing racial inequity",
           "description": "Organisations working on racial justice or supporting people from multiple communities",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": true,
           "sub_categories": [
           ]
         },
@@ -18,6 +19,7 @@
           "name": "Black / African / Caribbean / Black British",
           "description": "Mixed Black/ Black British",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
             {
               "code": "DEI010110",
@@ -41,6 +43,7 @@
           "name": "Mixed",
           "description": "Mixed groups",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
             {
               "code": "DEI010210",
@@ -64,6 +67,7 @@
           "name": "Asian / Asian British",
           "description": "Mixed Asian/ Asian British",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
             {
               "code": "DEI010310",
@@ -97,6 +101,7 @@
           "name": "Other Group experiencing ethnic or racial inequity",
           "description": "",
           "is_other_option_in_population_group": true,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
             {
               "code": "DEI019910",
@@ -133,6 +138,7 @@
           "name": "Disabled people",
           "description": "Working with people across multiple disabilities",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": true,
           "sub_categories": [
           ]
         },
@@ -141,6 +147,7 @@
           "name": "Physical Impairment",
           "description": "Working with people with multiple or different physical impairments",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
             {
               "code": "DEI020110",
@@ -169,6 +176,7 @@
           "name": "Mental Health",
           "description": "Mental health condition or experience, such as depression or psychosis or addiction that impacts people’s lives",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -177,6 +185,7 @@
           "name": "Cognitive differences",
           "description": "Multiple or different cognitive differences",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
             {
               "code": "DEI020310",
@@ -200,6 +209,7 @@
           "name": "Health",
           "description": "Long-standing illness or health condition, such as cancer, HIV, diabetes, chronic heart disease or epilepsy, or other rare conditions",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -208,6 +218,7 @@
           "name": "Other",
           "description": "Other - An impairment, medical condition or environmental disadvantage that is not listed above",
           "is_other_option_in_population_group": true,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         }
@@ -223,6 +234,7 @@
           "name": "Faith",
           "description": "Interfaith and multi-faith groups",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": true,
           "sub_categories": [
           ]
         },
@@ -231,6 +243,7 @@
           "name": "Catholic",
           "description": "People who describe their faith as Catholic or Roman Catholic",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -239,6 +252,7 @@
           "name": "Protestant",
           "description": "Anglicans, Adventists, Baptists, Methodists, Pentecostals, Presbyterians, Religious Society of Friends, Reformed Churches and other Protestant denominations",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -247,6 +261,7 @@
           "name": "Other Christian denominations",
           "description": "Orthodox and other denominations",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -255,6 +270,7 @@
           "name": "Buddhist",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -263,6 +279,7 @@
           "name": "Hindu",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -271,6 +288,7 @@
           "name": "Jewish",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -279,6 +297,7 @@
           "name": "Muslim",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -287,6 +306,7 @@
           "name": "Sikh",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -295,6 +315,7 @@
           "name": "Atheist",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -303,6 +324,7 @@
           "name": "Agnostic",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -311,6 +333,7 @@
           "name": "Other",
           "description": "Other faiths and beliefs",
           "is_other_option_in_population_group": true,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         }
@@ -326,6 +349,7 @@
           "name": "LGBT+ People",
           "description": "Working with LGBT+ people with multiple identities",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": true,
           "sub_categories": [
           ]
         },
@@ -334,6 +358,7 @@
           "name": "Bisexual people",
           "description": "All bisexual people",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
             {
               "code": "DEI040110",
@@ -352,6 +377,7 @@
           "name": "Gay men",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -360,6 +386,7 @@
           "name": "Lesbian/gay women",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -368,6 +395,7 @@
           "name": "Transgender people",
           "description": "All transgender people",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
             {
               "code": "DEI040410",
@@ -386,6 +414,7 @@
           "name": "Non-binary people",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -394,6 +423,7 @@
           "name": "Other",
           "description": "Other LGBT+ People, including queer and intersex people",
           "is_other_option_in_population_group": true,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         }
@@ -409,6 +439,7 @@
           "name": "Migrants",
           "description": "Migrants with multiple status",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": true,
           "sub_categories": [
           ]
         },
@@ -417,6 +448,7 @@
           "name": "Asylum seekers",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -425,6 +457,7 @@
           "name": "Refugees",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -433,6 +466,7 @@
           "name": "Undocumented People",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -441,6 +475,7 @@
           "name": "Other Migrants",
           "description": "This includes other migrants with official immigration status, e.g. international students; and who are naturalised British",
           "is_other_option_in_population_group": true,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         }
@@ -456,6 +491,7 @@
           "name": "Older People",
           "description": "Typically those aged 60 and over",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -464,6 +500,7 @@
           "name": "Young adults",
           "description": "Typically young people from 16 to 25 years of age",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -472,6 +509,7 @@
           "name": "Young people",
           "description": "Typically young people from 8 to 25",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -480,6 +518,7 @@
           "name": "Children and Young People",
           "description": "Typically people under 26 but sometimes people under 19",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -488,6 +527,7 @@
           "name": "Children",
           "description": "Under 16",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -496,6 +536,7 @@
           "name": "Infants",
           "description": "Under 2 years of age",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         }
@@ -511,6 +552,7 @@
           "name": "People who are educationally or economically disadvantaged",
           "description": "This will be defined by the organisation, such as children eligible for free school meals or for adults were eligible for free school meals as a child, families receiving benefits or universal credit, people who are homeless, people who did not complete formal education or otherwise considered in deprivation or poverty etc.",
           "is_other_option_in_population_group": true,
+          "is_top_level_option_in_population_group": true,
           "sub_categories": [
           ]
         }
@@ -525,6 +567,7 @@
           "code": "DEI080000",
           "name": "Women and girls",
           "is_other_option_in_population_group": true,
+          "is_top_level_option_in_population_group": true,
           "description": "Those who identify and live as women and girls",
           "sub_categories": [
           ]
@@ -541,6 +584,7 @@
           "name": "Welsh Language Speaking",
           "description": "",
           "is_other_option_in_population_group": true,
+          "is_top_level_option_in_population_group": true,
           "sub_categories": [
           ]
         }
@@ -556,6 +600,7 @@
           "name": "The Protestant community",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -564,6 +609,7 @@
           "name": "The Catholic community",
           "description": "",
           "is_other_option_in_population_group": false,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         },
@@ -572,6 +618,7 @@
           "name": "Neither",
           "description": "",
           "is_other_option_in_population_group": true,
+          "is_top_level_option_in_population_group": false,
           "sub_categories": [
           ]
         }

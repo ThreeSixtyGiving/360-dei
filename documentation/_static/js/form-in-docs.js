@@ -26,12 +26,18 @@ function setup() {
     let GeneralAvailable = $('#setupForm [name="General"]').val() == "1";
     let LivedExperienceAvailable = $('#setupForm [name="LivedExperience"]').val() == "1";
     let GeographyAvailable = $('#setupForm [name="Geography"]').val() == "1";
+    let selectedAnswers = $('#setupForm [name="selected_answers"]').val();
     let answers = codes.getAnswers();
     for(let idx in answers) {
         codes.setPopulationGroup(
             answers[idx]['prefix'],
             $('#screenSetupClassificationOptions [value="'+answers[idx]['prefix']+'"]').is(':checked')
         );
+    }
+    if (selectedAnswers == 'population_groups') {
+        codes.deselectAllCategoriesAndSubCategories();
+    } else if (selectedAnswers == 'categories') {
+        codes.deselectAllSubCategories();
     }
     // Q1
     let q1option = $('#setupForm [name="Q1"]').val();

@@ -247,7 +247,6 @@ class form {
             html += '</label>';
             html += '</div>';
         }
-        console.log(this.general_option_available);
         html += '</div>';
 
         // Place Form

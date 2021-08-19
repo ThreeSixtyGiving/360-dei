@@ -82,8 +82,9 @@ $( document ).ready(function() {
         function() {
             let answers = codes.getAnswers();
             for(let idx in answers) {
+                let checked = answers[idx]['prefix'] != 'DEI70' && answers[idx]['prefix'] != 'DEI80' ? ' checked' : '';
                 $('#screenSetupClassificationOptions').append(
-                    '<div><label><input type="checkbox" name="" value="'+answers[idx]['prefix']+'" checked> Include Population Group: '+answers[idx]['name']+'</label></div>'
+                    '<div><label><input type="checkbox" name="" value="'+answers[idx]['prefix']+'"'+checked+'> Include Population Group: '+answers[idx]['name']+'</label></div>'
                 );
             }
             $('#screenSetup').show();

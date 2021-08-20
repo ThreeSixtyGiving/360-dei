@@ -41,6 +41,10 @@
       "items": {
         "type": "object",
         "properties": {
+          "dei_purposes": {
+            "title": "Purposes of data collection",
+            "type": "string"
+          },
           "dei_asked_status": {
             "title": "Asked Status",
             "description": "How was this question asked?",
@@ -103,7 +107,7 @@
         },
         "additionalProperties": false
       },
-      "rollUp": ["dei_asked_status","dei_available_options","dei_reply_status","classification_entered","location/0/description"]
+      "rollUp": ["dei_purposes","dei_asked_status","dei_available_options","dei_reply_status","classification_entered","location/0/description"]
     },
     "Organization": {
       "properties": {

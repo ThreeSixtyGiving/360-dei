@@ -107,17 +107,21 @@ $( document ).ready(function() {
 });
 
 function questionCallback() {
+    let data = {
+        'project': [ q1.getData() ],
+        'recipientOrganization': [
+            {
+                'mission': [ q2.getData() ],
+                'leadership': [ q3.getData() ],
+            }
+        ]
+    };
+    data['project'][0]['dei_purposes'] = "A demo form";
+    data['recipientOrganization'][0]['mission'][0]['dei_purposes'] = "A demo form";
+    data['recipientOrganization'][0]['leadership'][0]['dei_purposes'] = "A demo form";
     $('#JSONOut').val(
         JSON.stringify(
-            {
-                'project': [ q1.getData() ],
-                'recipientOrganization': [
-                    {
-                        'mission': [ q2.getData() ],
-                        'leadership': [ q3.getData() ],
-                    }
-                ]
-            },
+            data,
             null,
             5
         )

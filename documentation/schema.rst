@@ -100,9 +100,17 @@ A funder has decided that these questions are not applicable and has not asked t
 Asked after grant was made and no reply was received
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A funder has asked people it recently made grants to answer the DEI questions, but no reply has been received from the organisation.
+A funder has asked people it recently made grants to to answer the DEI questions, but no reply has been received from the organisation.
 
 .. jsoninclude:: ../examples/asked-after-no-reply-received.json
+    :jsonpointer:
+
+A simple example
+~~~~~~~~~~~~~~~~
+
+A funder has asked people it recently made grants to to answer the DEI questions, and got a reply. The "dei_classification_available_options" field is missing.
+
+.. jsoninclude:: ../examples/simple.json
     :jsonpointer:
 
 

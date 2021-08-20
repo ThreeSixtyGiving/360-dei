@@ -126,4 +126,14 @@ function questionCallback() {
             5
         )
     );
+    delete data['project'][0]['dei_classification_available_options'];
+    delete data['recipientOrganization'][0]['mission'][0]['dei_classification_available_options'];
+    delete data['recipientOrganization'][0]['leadership'][0]['dei_classification_available_options'];
+    $('#JSONOutSmaller').val(
+        JSON.stringify(
+            data,
+            null,
+            5
+        )
+    );
 }

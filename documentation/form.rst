@@ -141,6 +141,9 @@ Demo
         <h3>JSON</h3>
         <textarea id="JSONOut" disabled="true" style="width: 100%; height: 300px;"></textarea>
 
+        <p>The following JSON data is missing the "dei_classification_available_options" field:</p>
+        <textarea id="JSONOutSmaller" disabled="true" style="width: 100%; height: 300px;"></textarea>
+
     </div>
 
     <link rel="stylesheet" href="form.css">

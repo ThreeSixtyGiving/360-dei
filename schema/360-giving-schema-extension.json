@@ -85,6 +85,7 @@
             }
           },
           "location": {
+            "title": "Locations",
             "type": "array",
             "items": {
               "type": "object",
@@ -96,11 +97,13 @@
                 }
               },
               "required": ["description"]
-            }
+            },
+            "rollUp": ["description"]
           }
         },
         "additionalProperties": false
-      }
+      },
+      "rollUp": ["dei_asked_status","dei_available_options","dei_reply_status","classification_entered","location/0/description"]
     },
     "Organization": {
       "properties": {

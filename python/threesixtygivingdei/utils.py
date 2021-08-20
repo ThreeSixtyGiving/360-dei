@@ -43,6 +43,7 @@ def compile():
             output_name=os.path.join(root_dir, "_compiled", "360-giving-schema-fields." + output_format),
             schema=os.path.join(root_dir, "_compiled", "360-giving-schema-including-extension.json"),
             main_sheet_name='grants',
+            rollup=True,
         )
 
         flattentool.create_template(

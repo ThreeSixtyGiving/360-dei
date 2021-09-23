@@ -113,7 +113,7 @@ class selected_possible_answers_data extends possible_answers_data {
             if (other_categories_1.length) {
                 return other_categories_1[0];
             }
-            // If not there (because not selected) look for is_other_option_in_population_group
+            // If not there (because not selected) look for is_top_level_option_in_population_group
             let other_categories_2 = chosen_population_groups[0]['categories'].filter(category => category['is_top_level_option_in_population_group'] && category['selected']);
             if (other_categories_2.length) {
                 return other_categories_2[0];

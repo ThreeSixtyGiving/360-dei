@@ -330,7 +330,7 @@ class form {
                         true
                     );
                 } else {
-                    // There is a special case; one population group without an other option.
+                    // People could select categories such that there is no other option.
                     // In this case, show the warning.
                     $('#'+this.css_id_prefix+'_population_group_'+prefix+ ' .dei_form_must_select_one_in_population_group_warning').show();
                 }

@@ -61,19 +61,17 @@ DEI05 - Migrants
 .. dei_taxonomy:: DEI05
     :prefix: DEI05
 
-DEI06 - Older and younger people
-================================
+DEI06 - Older people
+====================
 
 .. dei_taxonomy_population_group_description:: DEI06
     :prefix: DEI06
 
-Note this is a special case; none of the options count as an "other" option.
-
 .. dei_taxonomy:: DEI06
     :prefix: DEI06
 
-DEI07 - People who are educationally or economically disadvantaged
-==================================================================
+DEI07 - Children and Young People
+=================================
 
 .. dei_taxonomy_population_group_description:: DEI07
     :prefix: DEI07
@@ -81,14 +79,23 @@ DEI07 - People who are educationally or economically disadvantaged
 .. dei_taxonomy:: DEI07
     :prefix: DEI07
 
-DEI08 - Women and girls
-=======================
+DEI08 - People who are educationally or economically disadvantaged
+==================================================================
 
 .. dei_taxonomy_population_group_description:: DEI08
     :prefix: DEI08
 
 .. dei_taxonomy:: DEI08
     :prefix: DEI08
+
+DEI09 - Women and girls
+=======================
+
+.. dei_taxonomy_population_group_description:: DEI09
+    :prefix: DEI09
+
+.. dei_taxonomy:: DEI09
+    :prefix: DEI09
 
 DEI70 - Welsh Language Speaking
 ===============================

@@ -65,7 +65,7 @@
             "description": "Classifications from Taxonomies which were available when the question was asked?",
             "type": "array",
             "items": {
-              "$ref": "#/definitions/DEI_Classification"
+              "$ref": "#/definitions/Classification"
             }
           },
           "dei_reply_status": {

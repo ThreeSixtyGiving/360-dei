@@ -77,7 +77,7 @@
             "title": "Classification from Taxonomies",
             "type": "array",
             "items": {
-              "$ref": "#/definitions/DEI_Classification"
+              "$ref": "#/definitions/Classification"
             }
           },
           "classification_entered": {

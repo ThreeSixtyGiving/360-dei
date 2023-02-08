@@ -1,6 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {
+    "Classification": {
+      "required": [
+        "vocabulary",
+	"code"
+      ]
+    },
     "DEI_Answer": {
       "type": "array",
       "items": {

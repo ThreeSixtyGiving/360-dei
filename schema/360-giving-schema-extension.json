@@ -40,7 +40,17 @@
       "type": "array",
       "items": {
         "type": "object",
+	"required": [
+	  "id"
+	],
         "properties": {
+	  "id": {
+	    "title": "DEI Answer Identifier",
+	    "type": [
+	      "string",
+	      "integer"
+	    ]
+	  },
           "dei_purposes": {
             "title": "Purposes of data collection",
             "type": "string"

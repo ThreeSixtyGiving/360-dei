@@ -13,6 +13,7 @@
   ],
   "project": [
     {
+      "id": "example-dei-answer-01",
       "dei_asked_status": "ASKED_DURING_APPLICATION",
       "dei_available_options": [
         "TAXONOMY"
@@ -33,6 +34,7 @@
       "name": "Test",
       "mission": [
         {
+	  "id": "example-dei-answer-02",
           "dei_asked_status": "ASKED_DURING_APPLICATION",
           "dei_available_options": [
             "TAXONOMY"
@@ -49,6 +51,7 @@
       ],
       "leadership": [
         {
+	  "id": "example-dei-answer-03",
           "dei_asked_status": "ASKED_DURING_APPLICATION",
           "dei_available_options": [
             "TAXONOMY"

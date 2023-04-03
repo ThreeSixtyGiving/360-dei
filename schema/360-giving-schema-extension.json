@@ -37,9 +37,7 @@
       ]
     },
     "DEI_Answer": {
-      "type": "array",
-      "items": {
-        "type": "object",
+      "type": "object",
         "properties": {
           "dei_purposes": {
             "title": "Purposes of data collection",
@@ -104,28 +102,40 @@
             },
             "rollUp": ["description"]
           }
-        },
-        "additionalProperties": false
-      },
-      "rollUp": ["dei_purposes","dei_asked_status","dei_available_options","dei_reply_status","classification_entered","location/0/description"]
-    },
-    "Organization": {
-      "properties": {
-        "mission": {
-          "$ref": "#/definitions/DEI_Answer",
-          "title": "Information about the mission of this organisation"
-        },
-        "leadership": {
-          "$ref": "#/definitions/DEI_Answer",
-          "title": "Information about the leadership of this organisation"
-        }
       }
     }
   },
   "properties": {
-    "project": {
-      "$ref": "#/definitions/DEI_Answer",
-      "title": "Information about the project"
-    }
+     "deiDetails": {
+       "type": "object",
+       "title": "DEI Details",
+       "description": "Information related to the DEI Extension goes here",
+       "properties": {
+         "project": {
+	   "type": "array",
+	   "title": "Project",
+	   "description": "DEI information about the project",
+	   "items": {
+	     "$ref": "#/definitions/DEI_Answer"
+	   }
+	 },
+	 "mission": {
+           "type": "array",
+	   "title": "Mission",
+	   "description": "DEI information about the mission of the recipient organisation",
+	   "items": {
+	     "$ref": "#/definitions/DEI_Answer"
+	   }
+	 },
+	 "leadership": {
+	   "type": "array",
+	   "title": "Leadership",
+	   "description": "DEI information about the leadership of the recipient organisation",
+	   "items": {
+	     "$ref": "#/definitions/DEI_Answer"
+	   }
+	 }
+       }
+     }
   }
 }

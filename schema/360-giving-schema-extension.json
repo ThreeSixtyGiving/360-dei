@@ -4,32 +4,32 @@
     "DEIClassification": {
       "type": "object",
       "properties": {
-          "vocabulary": {
-            "type": "string",
-            "description": "A vocabulary used for this classification.",
-            "title": "Vocabulary"
-          },
-          "code": {
-            "type": "string",
-            "description": "A codelist value in the chosen vocabulary.",
-            "title": "Code"
-          },
-          "title": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "The title of this classification.",
-            "title": "Title"
-          },
-          "description": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "A description of this classification.",
-            "title": "Description"
-          }
+        "vocabulary": {
+          "type": "string",
+          "description": "A vocabulary used for this classification.",
+          "title": "Vocabulary"
+        },
+        "code": {
+          "type": "string",
+          "description": "A codelist value in the chosen vocabulary.",
+          "title": "Code"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The title of this classification.",
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "A description of this classification.",
+          "title": "Description"
+        }
       },
       "required": [
         "vocabulary",
@@ -38,104 +38,108 @@
     },
     "DEIAnswer": {
       "type": "object",
-        "properties": {
-          "dei_purposes": {
-            "title": "Purposes of data collection",
-            "type": "string"
-          },
-          "askedStatus": {
-            "title": "Asked Status",
-            "description": "How was this question asked?",
+      "properties": {
+        "dei_purposes": {
+          "title": "Purposes of data collection",
+          "type": "string"
+        },
+        "askedStatus": {
+          "title": "Asked Status",
+          "description": "How was this question asked?",
+          "type": "string",
+          "codelist": "askedStatus.csv"
+        },
+        "availableOptions": {
+          "title": "Available Options",
+          "description": "Which options were available when the question was asked?",
+          "type": "array",
+          "items": {
             "type": "string",
-            "codelist": "askedStatus.csv"
-          },
-          "availableOptions": {
-            "title": "Available Options",
-            "description": "Which options were available when the question was asked?",
-            "type": "array",
-            "items": {
-              "type": "string",
-              "codelist": "availableOptions.csv"
-            }
-          },
-          "classificationAvailableOptions": {
-            "title": "Classifications from Taxonomies available options",
-            "description": "Classifications from Taxonomies which were available when the question was asked?",
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/DEIClassification"
-            }
-          },
-          "replyStatus": {
-            "title": "Reply Status",
-            "type": "string",
-            "codelist": "replyStatus.csv"
-          },
-          "classification": {
-            "title": "Classification from Taxonomies",
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/DEIClassification"
-            }
-          },
-          "classificationEntered": {
-            "title": "Classification Entered",
-            "description": "Classifications provided that are not from a vocabulary like Lived Experience can be entered here.",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "location": {
-            "title": "Locations",
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "description": {
-                  "type": "string",
-                  "description": "A description of this location.",
-                  "title": "Description"
-                }
-              },
-              "required": ["description"]
-            },
-            "rollUp": ["description"]
+            "codelist": "availableOptions.csv"
           }
+        },
+        "classificationAvailableOptions": {
+          "title": "Classifications from Taxonomies available options",
+          "description": "Classifications from Taxonomies which were available when the question was asked?",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DEIClassification"
+          }
+        },
+        "replyStatus": {
+          "title": "Reply Status",
+          "type": "string",
+          "codelist": "replyStatus.csv"
+        },
+        "classification": {
+          "title": "Classification from Taxonomies",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DEIClassification"
+          }
+        },
+        "classificationEntered": {
+          "title": "Classification Entered",
+          "description": "Classifications provided that are not from a vocabulary like Lived Experience can be entered here.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "location": {
+          "title": "Locations",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string",
+                "description": "A description of this location.",
+                "title": "Description"
+              }
+            },
+            "required": [
+              "description"
+            ]
+          },
+          "rollUp": [
+            "description"
+          ]
+        }
       }
     }
   },
   "properties": {
-     "deiDetails": {
-       "type": "object",
-       "title": "DEI Details",
-       "description": "Information related to the DEI Extension goes here",
-       "properties": {
-         "project": {
-	   "type": "array",
-	   "title": "Project",
-	   "description": "DEI information about the project",
-	   "items": {
-	     "$ref": "#/definitions/DEIAnswer"
-	   }
-	 },
-	 "mission": {
-           "type": "array",
-	   "title": "Mission",
-	   "description": "DEI information about the mission of the recipient organisation",
-	   "items": {
-	     "$ref": "#/definitions/DEIAnswer"
-	   }
-	 },
-	 "leadership": {
-	   "type": "array",
-	   "title": "Leadership",
-	   "description": "DEI information about the leadership of the recipient organisation",
-	   "items": {
-	     "$ref": "#/definitions/DEIAnswer"
-	   }
-	 }
-       }
-     }
+    "deiDetails": {
+      "type": "object",
+      "title": "DEI Details",
+      "description": "Information related to the DEI Extension goes here",
+      "properties": {
+        "project": {
+          "type": "array",
+          "title": "Project",
+          "description": "DEI information about the project",
+          "items": {
+            "$ref": "#/definitions/DEIAnswer"
+          }
+        },
+        "mission": {
+          "type": "array",
+          "title": "Mission",
+          "description": "DEI information about the mission of the recipient organisation",
+          "items": {
+            "$ref": "#/definitions/DEIAnswer"
+          }
+        },
+        "leadership": {
+          "type": "array",
+          "title": "Leadership",
+          "description": "DEI information about the leadership of the recipient organisation",
+          "items": {
+            "$ref": "#/definitions/DEIAnswer"
+          }
+        }
+      }
+    }
   }
 }

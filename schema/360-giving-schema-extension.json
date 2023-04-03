@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {
-    "DEI_Classification": {
+    "DEIClassification": {
       "type": "object",
       "properties": {
           "vocabulary": {
@@ -36,7 +36,7 @@
         "code"
       ]
     },
-    "DEI_Answer": {
+    "DEIAnswer": {
       "type": "object",
         "properties": {
           "dei_purposes": {
@@ -63,7 +63,7 @@
             "description": "Classifications from Taxonomies which were available when the question was asked?",
             "type": "array",
             "items": {
-              "$ref": "#/definitions/DEI_Classification"
+              "$ref": "#/definitions/DEIClassification"
             }
           },
           "replyStatus": {
@@ -75,7 +75,7 @@
             "title": "Classification from Taxonomies",
             "type": "array",
             "items": {
-              "$ref": "#/definitions/DEI_Classification"
+              "$ref": "#/definitions/DEIClassification"
             }
           },
           "classificationEntered": {
@@ -116,7 +116,7 @@
 	   "title": "Project",
 	   "description": "DEI information about the project",
 	   "items": {
-	     "$ref": "#/definitions/DEI_Answer"
+	     "$ref": "#/definitions/DEIAnswer"
 	   }
 	 },
 	 "mission": {
@@ -124,7 +124,7 @@
 	   "title": "Mission",
 	   "description": "DEI information about the mission of the recipient organisation",
 	   "items": {
-	     "$ref": "#/definitions/DEI_Answer"
+	     "$ref": "#/definitions/DEIAnswer"
 	   }
 	 },
 	 "leadership": {
@@ -132,7 +132,7 @@
 	   "title": "Leadership",
 	   "description": "DEI information about the leadership of the recipient organisation",
 	   "items": {
-	     "$ref": "#/definitions/DEI_Answer"
+	     "$ref": "#/definitions/DEIAnswer"
 	   }
 	 }
        }

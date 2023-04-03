@@ -43,13 +43,13 @@
             "title": "Purposes of data collection",
             "type": "string"
           },
-          "dei_asked_status": {
+          "askedStatus": {
             "title": "Asked Status",
             "description": "How was this question asked?",
             "type": "string",
             "codelist": "askedStatus.csv"
           },
-          "dei_available_options": {
+          "availableOptions": {
             "title": "Available Options",
             "description": "Which options were available when the question was asked?",
             "type": "array",
@@ -58,7 +58,7 @@
               "codelist": "availableOptions.csv"
             }
           },
-          "dei_classification_available_options": {
+          "classificationAvailableOptions": {
             "title": "Classifications from Taxonomies available options",
             "description": "Classifications from Taxonomies which were available when the question was asked?",
             "type": "array",
@@ -66,7 +66,7 @@
               "$ref": "#/definitions/DEI_Classification"
             }
           },
-          "dei_reply_status": {
+          "replyStatus": {
             "title": "Reply Status",
             "type": "string",
             "codelist": "replyStatus.csv"
@@ -78,7 +78,7 @@
               "$ref": "#/definitions/DEI_Classification"
             }
           },
-          "classification_entered": {
+          "classificationEntered": {
             "title": "Classification Entered",
             "description": "Classifications provided that are not from a vocabulary like Lived Experience can be entered here.",
             "type": "array",

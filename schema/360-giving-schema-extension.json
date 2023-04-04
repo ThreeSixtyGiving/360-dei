@@ -39,7 +39,14 @@
     "DEIAnswer": {
       "type": "object",
       "properties": {
-        "dei_purposes": {
+	"id": {
+            "title": "DEI Answer Identifier",
+            "type": [
+              "string",
+              "integer"
+            ]
+          },
+        "purposes": {
           "title": "Purposes of data collection",
           "type": "string"
         },
@@ -64,8 +71,7 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/DEIClassification"
-          }
-        },
+          },
         "replyStatus": {
           "title": "Reply Status",
           "type": "string",

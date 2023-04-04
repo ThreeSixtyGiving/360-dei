@@ -4,32 +4,32 @@
     "DEI_Classification": {
       "type": "object",
       "properties": {
-          "vocabulary": {
-            "type": "string",
-            "description": "A vocabulary used for this classification.",
-            "title": "Vocabulary"
-          },
-          "code": {
-            "type": "string",
-            "description": "A codelist value in the chosen vocabulary.",
-            "title": "Code"
-          },
-          "title": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "The title of this classification.",
-            "title": "Title"
-          },
-          "description": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "A description of this classification.",
-            "title": "Description"
-          }
+        "vocabulary": {
+          "type": "string",
+          "description": "A vocabulary used for this classification.",
+          "title": "Vocabulary"
+        },
+        "code": {
+          "type": "string",
+          "description": "A codelist value in the chosen vocabulary.",
+          "title": "Code"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The title of this classification.",
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "A description of this classification.",
+          "title": "Description"
+        }
       },
       "required": [
         "vocabulary",
@@ -40,7 +40,17 @@
       "type": "array",
       "items": {
         "type": "object",
+        "required": [
+          "id"
+        ],
         "properties": {
+          "id": {
+            "title": "DEI Answer Identifier",
+            "type": [
+              "string",
+              "integer"
+            ]
+          },
           "dei_purposes": {
             "title": "Purposes of data collection",
             "type": "string"
@@ -100,14 +110,25 @@
                   "title": "Description"
                 }
               },
-              "required": ["description"]
+              "required": [
+                "description"
+              ]
             },
-            "rollUp": ["description"]
+            "rollUp": [
+              "description"
+            ]
           }
         },
         "additionalProperties": false
       },
-      "rollUp": ["dei_purposes","dei_asked_status","dei_available_options","dei_reply_status","classification_entered","location/0/description"]
+      "rollUp": [
+        "dei_purposes",
+        "dei_asked_status",
+        "dei_available_options",
+        "dei_reply_status",
+        "classification_entered",
+        "location/0/description"
+      ]
     },
     "Organization": {
       "properties": {

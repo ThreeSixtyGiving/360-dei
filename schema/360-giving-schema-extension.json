@@ -39,13 +39,13 @@
     "DEIAnswer": {
       "type": "object",
       "properties": {
-	"id": {
-            "title": "DEI Answer Identifier",
-            "type": [
-              "string",
-              "integer"
-            ]
-          },
+        "id": {
+          "title": "DEI Answer Identifier",
+          "type": [
+            "string",
+            "integer"
+          ]
+        },
         "purposes": {
           "title": "Purposes of data collection",
           "type": "string"
@@ -72,77 +72,78 @@
           "items": {
             "$ref": "#/definitions/DEIClassification"
           },
-        "replyStatus": {
-          "title": "Reply Status",
-          "type": "string",
-          "codelist": "replyStatus.csv"
-        },
-        "classification": {
-          "title": "Classification from Taxonomies",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/DEIClassification"
-          }
-        },
-        "classificationEntered": {
-          "title": "Classification Entered",
-          "description": "Classifications provided that are not from a vocabulary like Lived Experience can be entered here.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "location": {
-          "title": "Locations",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "description": {
-                "type": "string",
-                "description": "A description of this location.",
-                "title": "Description"
-              }
+          "replyStatus": {
+            "title": "Reply Status",
+            "type": "string",
+            "codelist": "replyStatus.csv"
+          },
+          "classification": {
+            "title": "Classification from Taxonomies",
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/DEIClassification"
+            }
+          },
+          "classificationEntered": {
+            "title": "Classification Entered",
+            "description": "Classifications provided that are not from a vocabulary like Lived Experience can be entered here.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "location": {
+            "title": "Locations",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "description": "A description of this location.",
+                  "title": "Description"
+                }
+              },
+              "required": [
+                "description"
+              ]
             },
-            "required": [
+            "rollUp": [
               "description"
             ]
-          },
-          "rollUp": [
-            "description"
-          ]
+          }
         }
       }
-    }
-  },
-  "properties": {
-    "deiDetails": {
-      "type": "object",
-      "title": "DEI Details",
-      "description": "Information related to the DEI Extension goes here",
-      "properties": {
-        "project": {
-          "type": "array",
-          "title": "Project",
-          "description": "DEI information about the project",
-          "items": {
-            "$ref": "#/definitions/DEIAnswer"
-          }
-        },
-        "mission": {
-          "type": "array",
-          "title": "Mission",
-          "description": "DEI information about the mission of the recipient organisation",
-          "items": {
-            "$ref": "#/definitions/DEIAnswer"
-          }
-        },
-        "leadership": {
-          "type": "array",
-          "title": "Leadership",
-          "description": "DEI information about the leadership of the recipient organisation",
-          "items": {
-            "$ref": "#/definitions/DEIAnswer"
+    },
+    "properties": {
+      "deiDetails": {
+        "type": "object",
+        "title": "DEI Details",
+        "description": "Information related to the DEI Extension goes here",
+        "properties": {
+          "project": {
+            "type": "array",
+            "title": "Project",
+            "description": "DEI information about the project",
+            "items": {
+              "$ref": "#/definitions/DEIAnswer"
+            }
+          },
+          "mission": {
+            "type": "array",
+            "title": "Mission",
+            "description": "DEI information about the mission of the recipient organisation",
+            "items": {
+              "$ref": "#/definitions/DEIAnswer"
+            }
+          },
+          "leadership": {
+            "type": "array",
+            "title": "Leadership",
+            "description": "DEI information about the leadership of the recipient organisation",
+            "items": {
+              "$ref": "#/definitions/DEIAnswer"
+            }
           }
         }
       }

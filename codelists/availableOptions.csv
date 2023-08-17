@@ -1,6 +1,9 @@
-Code,Name,Description
-TAXONOMY,Taxonomy,They can select some or all of the Taxonomy codes. If some, it is not required to say which codes can or can not be selected.
-GEOGRAPHY,Geography
-LIVED_EXPERIENCE,Lived Experience
-PREFER_NOT_TO_SAY,Prefer Not To Say,Use of this option is discouraged
-GENERAL,General,This is general and is not aimed at or consists of a specific group of people
+Code,Title,Description
+AO100,"Taxonomy Population Group","The respondant may select the DEI Taxonomy codes referring to Population Group"
+AO101,"Taxonomy Category","The respondant may select the DEI Taxonomy codes referring to Categories within a Population Group"
+AO102,"Taxonomy Subcategory","The respondant may select the DEI Taxonomy codes referring to Subcategories within a Category"
+AO200,"Geography","The respondant may enter a description of the relevant geography in a field"
+AO201,"Lived Experience","The respondant may enter a description of the relevant lived experience in a field"
+AO300,"General","The respondant may declare that this is general and therefore not aimed at or consisting of a specific group of people"
+AO301,"Prefer Not To Say","The respondant may select an option that they prefer not to say"
+

@@ -1,152 +1,107 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {
-    "DEI_Classification": {
+    "DEIResponse": {
       "type": "object",
+      "title": "DEI Response",
+      "description": "A response to a DEI Application area, containing information such as the taxonomy codes selected and any lived experience or geography responses.",
       "properties": {
-        "vocabulary": {
+        "taxonomyCodes": {
+          "title": "Taxonomy Codes",
+          "description": "The Taxonomy Codes selected from the DEI Taxonomies",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "codelist": "taxonomyCodes.csv",
+            "openCodelist": false
+          },
+          "uniqueItems": true
+        },
+        "livedExperience": {
           "type": "string",
-          "description": "A vocabulary used for this classification.",
-          "title": "Vocabulary"
+          "title": "Lived Experience",
+          "description": "Description provided that are not drawn from a vocabulary but instead derived from lived experience"
         },
-        "code": {
+        "geography": {
           "type": "string",
-          "description": "A codelist value in the chosen vocabulary.",
-          "title": "Code"
-        },
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "The title of this classification.",
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "A description of this classification.",
-          "title": "Description"
+          "title": "Geography",
+          "description": "Description provided that are not drawn from a vocabulary but instead drawn from Geography"
         }
-      },
+      }
+    },
+    "DEIApplicationArea": {
+      "type": "object",
+      "title": "DEI Application Area",
+      "description": "A DEI Application area used to collect information about whether a particular question was asked, responded to, and additional information. It also contains the response information under the Response fields.",
       "required": [
-        "vocabulary",
-        "code"
-      ]
-    },
-    "DEI_Answer": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "title": "DEI Answer Identifier",
-            "type": [
-              "string",
-              "integer"
-            ]
-          },
-          "dei_purposes": {
-            "title": "Purposes of data collection",
-            "type": "string"
-          },
-          "dei_asked_status": {
-            "title": "Asked Status",
-            "description": "How was this question asked?",
-            "type": "string",
-            "codelist": "askedStatus.csv"
-          },
-          "dei_available_options": {
-            "title": "Available Options",
-            "description": "Which options were available when the question was asked?",
-            "type": "array",
-            "items": {
-              "type": "string",
-              "codelist": "availableOptions.csv"
-            }
-          },
-          "dei_classification_available_options": {
-            "title": "Classifications from Taxonomies available options",
-            "description": "Classifications from Taxonomies which were available when the question was asked?",
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/DEI_Classification"
-            }
-          },
-          "dei_reply_status": {
-            "title": "Reply Status",
-            "type": "string",
-            "codelist": "replyStatus.csv"
-          },
-          "classification": {
-            "title": "Classification from Taxonomies",
-            "type": "array",
-            "items": {
-              "$ref": "#/definitions/DEI_Classification"
-            }
-          },
-          "classification_entered": {
-            "title": "Classification Entered",
-            "description": "Classifications provided that are not from a vocabulary like Lived Experience can be entered here.",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "location": {
-            "title": "Locations",
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "description": {
-                  "type": "string",
-                  "description": "A description of this location.",
-                  "title": "Description"
-                }
-              },
-              "required": [
-                "description"
-              ]
-            },
-            "rollUp": [
-              "description"
-            ]
-          }
-        },
-        "additionalProperties": false
-      },
-      "rollUp": [
-        "dei_purposes",
-        "dei_asked_status",
-        "dei_available_options",
-        "dei_reply_status",
-        "classification_entered",
-        "location/0/description"
-      ]
-    },
-    "Organization": {
+        "askedStatus"
+      ],
       "properties": {
-        "mission": {
-          "$ref": "#/definitions/DEI_Answer",
-          "title": "Information about the mission of this organisation"
+        "askedStatus": {
+          "type": "string",
+          "title": "Asked Status",
+          "description": "A code referring to how this question was asked. The value for this field should be drawn from the Asked Status codelist.",
+          "codelist": "askedStatus.csv",
+          "openCodelist": false
         },
+        "replyStatus": {
+          "type": "string",
+          "title": "Reply Status",
+          "description": "A code referring to the status of the reply to this question. The value for this field should be drawn from the Reply Status codelist.",
+          "codelist": "replyStatus.csv",
+          "openCodelist": false
+        },
+        "availableOptions": {
+          "type": "array",
+          "title": "Available Options",
+          "description": "Code(s) referring to options which were available when the question was asked. The value for these codes should be drawn from the Available Options codelist.",
+          "items": {
+            "type": "string",
+            "codelist": "availableOptions.csv",
+            "openCodelist": false
+          },
+          "uniqueItems": true
+        },
+        "purposes": {
+          "type": "string",
+          "title": "Purposes",
+          "description": "The purposes of collecting this data."
+        },
+        "additionalDetails": {
+          "type": "string",
+          "title": "Additional Details",
+          "description": "A free text field to include any additional details or rationales that may be important to this context."
+        },
+        "response": {
+          "$ref": "#/definitions/DEIResponse"
+        }
+      }
+    },
+    "DEIDetails": {
+      "type": "object",
+      "title": "DEI Details",
+      "description": "The DEI Details for this grant. Contains information about separate application areas and the responses to them.",
+      "required": [
+        "leadership",
+        "mission",
+        "project"
+      ],
+      "properties": {
         "leadership": {
-          "$ref": "#/definitions/DEI_Answer",
-          "title": "Information about the leadership of this organisation"
+          "$ref": "#/definitions/DEIApplicationArea"
+        },
+        "mission": {
+          "$ref": "#/definitions/DEIApplicationArea"
+        },
+        "project": {
+          "$ref": "#/definitions/DEIApplicationArea"
         }
       }
     }
   },
   "properties": {
-    "project": {
-      "$ref": "#/definitions/DEI_Answer",
-      "title": "Information about the project"
+    "deiDetails": {
+      "$ref": "#/definitions/DEIDetails"
     }
   }
 }

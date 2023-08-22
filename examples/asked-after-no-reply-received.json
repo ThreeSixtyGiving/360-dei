@@ -1,20 +1,20 @@
 {
-  "id": "test",
-  "title": "Test",
-  "description": "Test",
+  "id": "EG-001-ASKED-AFTER-APPLICATION",
+  "title": "Example Grant: Asked After Application with No Reply",
+  "description": "An example grant where the DEI data was asked for after the application process, but there has been no reply",
   "currency": "GBP",
   "amountAwarded": 1000,
   "awardDate": "2021-01",
   "fundingOrganization": [
     {
-      "id": "Test",
-      "name": "Test"
+      "id": "example-funder-001",
+      "name": "Example Funding Organisation"
     }
   ],
   "recipientOrganization": [
     {
-      "id": "Test",
-      "name": "Test"
+      "id": "example-recipient-002",
+      "name": "Example Recipient Organisation"
     }
   ],
   "deiDetails": {

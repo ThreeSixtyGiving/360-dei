@@ -11,47 +11,45 @@
       "name": "Test"
     }
   ],
-  "project": [
-    {
-      "id": "example-dei-answer-01",
-      "dei_asked_status": "ASKED_AFTER_APPLICATION",
-      "dei_available_options": [
-        "TAXONOMY",
-        "LIVED_EXPERIENCE",
-        "GEOGRAPHY"
-      ],
-      "dei_reply_status": "NO_REPLY"
-    }
-  ],
   "recipientOrganization": [
     {
       "id": "Test",
-      "name": "Test",
-      "mission": [
-        {    
-          "id": "example-dei-answer-02",
-          "dei_asked_status": "ASKED_AFTER_APPLICATION",
-          "dei_available_options": [
-            "TAXONOMY",
-            "LIVED_EXPERIENCE",
-            "GEOGRAPHY"
-          ],
-          "dei_reply_status": "NO_REPLY"
-        }
-      ],
-      "leadership": [
-        {
-	  "id": "example-dei-answer-03",
-          "dei_asked_status": "ASKED_AFTER_APPLICATION",
-          "dei_available_options": [
-            "TAXONOMY",
-            "LIVED_EXPERIENCE",
-            "GEOGRAPHY"
-          ],
-          "dei_reply_status": "NO_REPLY"
-        }
+      "name": "Test"
+    }
+  ],
+  "deiDetails": {
+    "leadership": {
+      "askedStatus": "AS201",
+      "replyStatus": "RS100",
+      "availableOptions": [
+        "AO100",
+        "AO101",
+        "AO102",
+        "AO200",
+        "AO201"
+      ]
+    },
+    "mission": {
+      "askedStatus": "AS201",
+      "replyStatus": "RS100",
+      "availableOptions": [
+        "AO100",
+        "AO101",
+        "AO102",
+        "AO200",
+        "AO201"
+      ]
+    },
+    "project": {
+      "askedStatus": "AS201",
+      "replyStatus": "RS100",
+      "availableOptions": [
+        "AO100",
+        "AO101",
+        "AO102",
+        "AO200",
+        "AO201"
       ]
     }
-  ]
+  }
 }
-

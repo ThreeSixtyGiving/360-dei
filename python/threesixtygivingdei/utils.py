@@ -11,7 +11,7 @@ def compile():
 
     # Compile Schema to add in codelists
     ctjs = CompileToJsonSchema(
-        input_filename=os.path.join(root_dir, "schema", "360-giving-schema-extension.json"),
+        input_filename=os.path.join(root_dir, "schema", "360-giving-schema.json"),
         codelist_base_directory=os.path.join(root_dir, "codelists")
     )
     schema = ctjs.get()

@@ -11,19 +11,19 @@ def compile():
 
     # Compile Schema to add in codelists
     ctjs = CompileToJsonSchema(
-        input_filename=os.path.join(root_dir, "schema", "360-giving-schema-extension.json"),
+        input_filename=os.path.join(root_dir, "schema", "360-giving-schema.json"),
         codelist_base_directory=os.path.join(root_dir, "codelists")
     )
     schema = ctjs.get()
 
-    ctjs_definition_organisation = CompileToJsonSchema(
-        input_schema=copy.deepcopy(schema['definitions']['Organization']),
-        codelist_base_directory=os.path.join(root_dir, "codelists")
-    )
-    schema['definitions']['Organization'] = ctjs_definition_organisation.get()
+    # ctjs_definition_organisation = CompileToJsonSchema(
+    #     input_schema=copy.deepcopy(schema['definitions']['Organization']),
+    #     codelist_base_directory=os.path.join(root_dir, "codelists")
+    # )
+    # schema['definitions']['Organization'] = ctjs_definition_organisation.get()
 
-    del schema['definitions']['DEI_Answer']
-    del schema['definitions']['DEI_Classification']
+    # del schema['definitions']['DEI_Answer']
+    # del schema['definitions']['DEI_Classification']
 
     with open(os.path.join(root_dir, "_compiled",  "360-giving-schema-only-extension.json"), "w") as fp:
         json.dump(schema, fp, indent=4)

@@ -1,38 +1,31 @@
 {
-  "id": "test",
-  "title": "Test",
-  "description": "Test",
+  "id": "EG-NOT-APPLICABLE",
+  "title": "Test Grant: Not Asked, Not Applicable",
+  "description": "An example grant where the funder did not ask any questions because they are not applicable",
   "currency": "GBP",
   "amountAwarded": 1000,
-  "awardDate": "2021-01",
+  "awardDate": "2021-01-01T00:00:00Z",
   "fundingOrganization": [
     {
-      "id": "Test",
-      "name": "Test"
-    }
-  ],
-  "project": [
-    {
-      "id": "example-dei-answer-01",
-      "dei_asked_status": "NOT_ASKED_NOT_APPLICABLE"
+      "id": "example-funder-001",
+      "name": "Example Funding Organisation"
     }
   ],
   "recipientOrganization": [
     {
-      "id": "Test",
-      "name": "Test",
-      "mission": [
-        {
-	  "id": "example-dei-answer-02",
-          "dei_asked_status": "NOT_ASKED_NOT_APPLICABLE"
-        }
-      ],
-      "leadership": [
-        {
-	  "id": "example-dei-answer-03",
-          "dei_asked_status": "NOT_ASKED_NOT_APPLICABLE"
-        }
-      ]
+      "id": "example-recipient-001",
+      "name": "Example Recipient Organisation"
     }
-  ]
+  ],
+  "deiDetails": {
+    "leadership": {
+      "askedStatus": "AS100"
+    },
+    "mission": {
+      "askedStatus": "AS100"
+    },
+    "project": {
+      "askedStatus": "AS100"
+    }
+  }
 }

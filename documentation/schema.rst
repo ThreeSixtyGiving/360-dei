@@ -12,31 +12,18 @@ Schema
 Overall schema
 ~~~~~~~~~~~~~~
 
-For each grant, there is a new key `project`. This holds a list of data objects, which are defined in the next section.
+For each grant, there is a new property `deiDetails`. This contains three properties: `leadership`, `mission`, and `project` which are all instances of `DEI Application Area`.
 
-Each grant can have multiple `recipientOrganization` objects. Each of those objects has 2 new keys.
+The `DEI Application Area` object contains some question-level metadata about how a question was asked (if it was asked), the reply status, and the options available to the respondant as well as some other fields. Each `DEI Application Area` also contains a `response` property containing the details of the response, taking the format of a `DEI Response`.
 
-* `mission`
-* `leadership`
+Each `DEI Response` contains fields for containing the answers given to that application area. There are spaces for a list of `taxonomyCodes`, as well as for the free-text entry fields for `livedExperience` and `geography`.
 
-Both of these hold a list of data objects, which are defined in the next section.
-
-Each data object in a list
+Reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For each of the 3 places listed in the previous section, the JSON for each data object in the list has the same structure. This is described in 2 sections.
-
-The first section contain fields for storing information about how the question was asked and responded to:
+These is an overview of the extension schema structures.
 
 .. jsonschema:: ../_compiled/360-giving-schema-only-extension.json
-  :pointer: /properties/project/items
-  :include: dei_purposes,dei_asked_status,dei_available_options,dei_classification_available_options,dei_reply_status
-
-The second section contains fields for storing information about the answer:
-
-.. jsonschema:: ../_compiled/360-giving-schema-only-extension.json
-  :pointer: /properties/project/items
-  :include: classification,classification_entered,location
 
 asked_status values
 ~~~~~~~~~~~~~~~~~~~

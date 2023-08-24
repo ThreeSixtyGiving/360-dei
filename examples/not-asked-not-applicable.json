@@ -4,7 +4,7 @@
   "description": "An example grant where the funder did not ask any questions because they are not applicable",
   "currency": "GBP",
   "amountAwarded": 1000,
-  "awardDate": "2021-01-01",
+  "awardDate": "2021-01-01T00:00:00Z",
   "fundingOrganization": [
     {
       "id": "example-funder-001",

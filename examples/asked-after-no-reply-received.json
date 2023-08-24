@@ -4,7 +4,7 @@
   "description": "An example grant where the DEI data was asked for after the application process, but there has been no reply",
   "currency": "GBP",
   "amountAwarded": 1000,
-  "awardDate": "2021-01",
+  "awardDate": "2021-01-01T00:00:00Z",
   "fundingOrganization": [
     {
       "id": "example-funder-001",

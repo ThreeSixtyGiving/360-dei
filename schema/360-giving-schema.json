@@ -8,7 +8,7 @@
       "properties": {
         "taxonomyCodes": {
           "title": "Taxonomy Codes",
-          "description": "The Taxonomy Codes selected from the DEI Taxonomies",
+          "description": "The Taxonomy Codes selected from the DEI Taxonomies. The value for these codes should be drawn from the Taxonomy Codes codelist.",
           "type": "array",
           "items": {
             "type": "string",

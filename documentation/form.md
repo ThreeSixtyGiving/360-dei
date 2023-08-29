@@ -2,15 +2,9 @@ Form
 ====
 
 
+## Demo
 
-.. warning::
-    This is a work in progress. It has not been approved yet.
-
-
-
-Demo
-----
-
+```{eval-rst}
 .. raw:: html
 
     <div id="screenSetup" style="display: none; margin-bottom: 50px;">
@@ -149,3 +143,4 @@ Demo
     <link rel="stylesheet" href="form.css">
     <script src="form.js"></script>
     <script src="_static/js/form-in-docs.js"></script>
+```

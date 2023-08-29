@@ -36,7 +36,9 @@ Therefore you can think of the extension structure as follows:
 
 These is an overview of the extension schema structures.
 
+```{eval-rst}
 .. jsonschema:: ../_compiled/360-giving-schema-only-extension.json
+```
 
 ## Codelists
 

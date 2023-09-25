@@ -62,11 +62,6 @@
           },
           "uniqueItems": true
         },
-        "purposes": {
-          "type": "string",
-          "title": "Purposes",
-          "description": "The purposes of collecting this data."
-        },
         "additionalDetails": {
           "type": "string",
           "title": "Additional Details",
@@ -87,6 +82,11 @@
         "project"
       ],
       "properties": {
+        "purposes": {
+          "type": "string",
+          "title": "Purposes",
+          "description": "The purposes of collecting this data."
+        },
         "leadership": {
           "$ref": "#/definitions/DEIApplicationArea"
         },

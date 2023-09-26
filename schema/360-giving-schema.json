@@ -84,6 +84,12 @@
         "project"
       ],
       "properties": {
+	"deiVersion": {
+	  "type": "string",
+	  "title": "DEI Data Standard Version",
+	  "description": "The version of the DEI Data Standard that this data uses e.g. 1.1",
+	  "pattern": "^[1-9]+\\.[1-9]\\d*$"
+	},
         "purposes": {
           "type": "string",
           "title": "Purposes",

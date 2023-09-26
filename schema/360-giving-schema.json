@@ -20,19 +20,19 @@
         "livedExperience": {
           "type": "string",
           "title": "Lived Experience",
-          "description": "Description provided that are not drawn from a vocabulary but instead derived from lived experience"
+          "description": "A free text description of other types of lived experience that is not drawn from the Taxonomy."
         },
         "geography": {
           "type": "string",
           "title": "Geography",
-          "description": "Description provided that are not drawn from a vocabulary but instead drawn from Geography"
+          "description": "A free text description that is not drawn from a vocabulary but instead relates to a particular geographical area."
         }
       }
     },
     "DeiApplicationArea": {
       "type": "object",
       "title": "DEI Application Area",
-      "description": "A DEI Application area used to collect information about whether a particular question was asked, responded to, and additional information. It also contains the response information under the Response fields.",
+      "description": "A DEI application area used to collect information about whether a particular question was asked, responded to, and additional information. It also contains the response information under the Response fields.",
       "required": [
         "askedStatus"
       ],

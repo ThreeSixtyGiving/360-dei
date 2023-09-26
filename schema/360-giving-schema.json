@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {
-    "DEIResponse": {
+    "DeiResponse": {
       "type": "object",
       "title": "DEI Response",
       "description": "A response to a DEI Application area, containing information such as the taxonomy codes selected and any lived experience or geography responses.",
@@ -29,7 +29,7 @@
         }
       }
     },
-    "DEIApplicationArea": {
+    "DeiApplicationArea": {
       "type": "object",
       "title": "DEI Application Area",
       "description": "A DEI Application area used to collect information about whether a particular question was asked, responded to, and additional information. It also contains the response information under the Response fields.",
@@ -68,11 +68,13 @@
           "description": "A free text field to include any additional details or rationales that may be important to this context."
         },
         "response": {
-          "$ref": "#/definitions/DEIResponse"
+          "$ref": "#/definitions/DeiResponse"
         }
       }
-    },
-    "DEIDetails": {
+    }
+  },
+  "properties": {
+    "deiDetails": {
       "type": "object",
       "title": "DEI Details",
       "description": "The DEI Details for this grant. Contains information about separate application areas and the responses to them.",
@@ -88,20 +90,15 @@
           "description": "The purposes of collecting this data."
         },
         "leadership": {
-          "$ref": "#/definitions/DEIApplicationArea"
+          "$ref": "#/definitions/DeiApplicationArea"
         },
         "mission": {
-          "$ref": "#/definitions/DEIApplicationArea"
+          "$ref": "#/definitions/DeiApplicationArea"
         },
         "project": {
-          "$ref": "#/definitions/DEIApplicationArea"
+          "$ref": "#/definitions/DeiApplicationArea"
         }
       }
-    }
-  },
-  "properties": {
-    "deiDetails": {
-      "$ref": "#/definitions/DEIDetails"
     }
   }
 }

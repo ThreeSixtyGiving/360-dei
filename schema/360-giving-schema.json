@@ -1,34 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {
-    "DeiResponse": {
-      "type": "object",
-      "title": "DEI Response",
-      "description": "A response to a DEI Application area, containing information such as the taxonomy codes selected and any lived experience or geography responses.",
-      "properties": {
-        "taxonomyCodes": {
-          "title": "Taxonomy Codes",
-          "description": "The Taxonomy Codes selected from the DEI Taxonomies. The value for these codes should be drawn from the Taxonomy Codes codelist.",
-          "type": "array",
-          "items": {
-            "type": "string",
-            "codelist": "taxonomyCodes.csv",
-            "openCodelist": false
-          },
-          "uniqueItems": true
-        },
-        "livedExperience": {
-          "type": "string",
-          "title": "Lived Experience",
-          "description": "A free text description of other types of lived experience that is not drawn from the Taxonomy."
-        },
-        "geography": {
-          "type": "string",
-          "title": "Geography",
-          "description": "A free text description that is not drawn from a vocabulary but instead relates to a particular geographical area."
-        }
-      }
-    },
     "DeiApplicationArea": {
       "type": "object",
       "title": "DEI Application Area",
@@ -68,41 +40,66 @@
           "description": "A free text field to include any additional details or rationales that may be important to this context."
         },
         "response": {
-          "$ref": "#/definitions/DeiResponse"
+          "type": "object",
+          "title": "DEI Response",
+          "description": "A response to a DEI Application area, containing information such as the taxonomy codes selected and any lived experience or geography responses.",
+          "properties": {
+            "taxonomyCodes": {
+              "title": "Taxonomy Codes",
+              "description": "The Taxonomy Codes selected from the DEI Taxonomies. The value for these codes should be drawn from the Taxonomy Codes codelist.",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "codelist": "taxonomyCodes.csv",
+                "openCodelist": false
+              },
+              "uniqueItems": true
+            },
+            "livedExperience": {
+              "type": "string",
+              "title": "Lived Experience",
+              "description": "A free text description of other types of lived experience that is not drawn from the Taxonomy."
+            },
+            "geography": {
+              "type": "string",
+              "title": "Geography",
+              "description": "A free text description that is not drawn from a vocabulary but instead relates to a particular geographical area."
+            }
+          }
         }
       }
-    }
-  },
-  "properties": {
-    "deiDetails": {
-      "type": "object",
-      "title": "DEI Details",
-      "description": "The DEI Details for this grant. Contains information about separate application areas and the responses to them.",
-      "required": [
-        "leadership",
-        "mission",
-        "project"
-      ],
-      "properties": {
-        "deiVersion": {
-          "type": "string",
-          "title": "DEI Data Standard Version",
-          "description": "The version of the DEI Data Standard that this data uses e.g. 1.1",
-          "pattern": "^[1-9]+\\.[1-9]\\d*$"
-        },
-        "purposes": {
-          "type": "string",
-          "title": "Purposes",
-          "description": "The purposes of collecting this data."
-        },
-        "leadership": {
-          "$ref": "#/definitions/DeiApplicationArea"
-        },
-        "mission": {
-          "$ref": "#/definitions/DeiApplicationArea"
-        },
-        "project": {
-          "$ref": "#/definitions/DeiApplicationArea"
+    },
+    "properties": {
+      "deiDetails": {
+        "type": "object",
+        "title": "DEI Details",
+        "description": "The DEI Details for this grant. Contains information about separate application areas and the responses to them.",
+        "required": [
+          "leadership",
+          "mission",
+          "project"
+        ],
+        "properties": {
+          "deiVersion": {
+            "type": "string",
+            "title": "DEI Data Standard Version",
+            "description": "The version of the DEI Data Standard that this data uses e.g. 1.1",
+            "pattern": "^[1-9]+\\.[1-9]\\d*$"
+          },
+          "purposes": {
+            "type": "string",
+            "title": "Purposes",
+            "description": "The purposes of collecting this data."
+          },
+          "leadership": {
+            "$ref": "#/definitions/DeiApplicationArea"
+          },
+          "mission": {
+            "$ref": "#/definitions/DeiApplicationArea"
+          },
+          "project": {
+            "$ref": "#/definitions/DeiApplicationArea"
+          }
         }
       }
     }

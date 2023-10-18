@@ -68,38 +68,38 @@
           }
         }
       }
-    },
-    "properties": {
-      "deiDetails": {
-        "type": "object",
-        "title": "DEI Details",
-        "description": "The DEI Details for this grant. Contains information about separate application areas and the responses to them.",
-        "required": [
-          "leadership",
-          "mission",
-          "project"
-        ],
-        "properties": {
-          "deiVersion": {
-            "type": "string",
-            "title": "DEI Data Standard Version",
-            "description": "The version of the DEI Data Standard that this data uses e.g. 1.1",
-            "pattern": "^[1-9]+\\.[1-9]\\d*$"
-          },
-          "purposes": {
-            "type": "string",
-            "title": "Purposes",
-            "description": "The purposes of collecting this data."
-          },
-          "leadership": {
-            "$ref": "#/definitions/DeiApplicationArea"
-          },
-          "mission": {
-            "$ref": "#/definitions/DeiApplicationArea"
-          },
-          "project": {
-            "$ref": "#/definitions/DeiApplicationArea"
-          }
+    }
+  },
+  "properties": {
+    "deiDetails": {
+      "type": "object",
+      "title": "DEI Details",
+      "description": "The DEI Details for this grant. Contains information about separate application areas and the responses to them.",
+      "required": [
+        "leadership",
+        "mission",
+        "project"
+      ],
+      "properties": {
+        "deiVersion": {
+          "type": "string",
+          "title": "DEI Data Standard Version",
+          "description": "The version of the DEI Data Standard that this data uses e.g. 1.1",
+          "pattern": "^[1-9]+\\.[1-9]\\d*$"
+        },
+        "purposes": {
+          "type": "string",
+          "title": "Purposes",
+          "description": "The purposes of collecting this data."
+        },
+        "leadership": {
+          "$ref": "#/definitions/DeiApplicationArea"
+        },
+        "mission": {
+          "$ref": "#/definitions/DeiApplicationArea"
+        },
+        "project": {
+          "$ref": "#/definitions/DeiApplicationArea"
         }
       }
     }

@@ -5,6 +5,9 @@
       "type": "object",
       "title": "DEI Application area",
       "description": "A DEI application area used to collect information about whether a particular question was asked, responded to, and additional information. It also contains the response information under the Response fields.",
+      "required": [
+        "askedStatus"
+      ],
       "properties": {
         "askedStatus": {
           "type": "string",
@@ -92,17 +95,17 @@
         "leadership": {
           "title": "Leadership",
           "description": "A DEI application area used to collect information about whether the leadership question was asked, responded to, and additional information. It also contains the response information under the Response fields.",
-            "$ref": "#/definitions/DeiApplicationArea"
+          "$ref": "#/definitions/DeiApplicationArea"
         },
         "mission": {
           "title": "Mission",
           "description": "A DEI application area used to collect information about whether the mission question was asked, responded to, and additional information. It also contains the response information under the Response fields.",
-            "$ref": "#/definitions/DeiApplicationArea"
+          "$ref": "#/definitions/DeiApplicationArea"
         },
         "project": {
           "title": "Project",
           "description": "A DEI application area used to collect information about whether the project question was asked, responded to, and additional information. It also contains the response information under the Response fields.",
-            "$ref": "#/definitions/DeiApplicationArea"
+          "$ref": "#/definitions/DeiApplicationArea"
         }
       }
     }

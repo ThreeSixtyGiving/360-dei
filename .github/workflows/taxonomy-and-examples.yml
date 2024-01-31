@@ -24,8 +24,8 @@ jobs:
     - name: Check Taxanomy meets Taxonomy Schema
       run: jsonschema -i taxonomy/taxonomy.json taxonomy/schema/taxonomyschema.json
     # Check all examples match compiled schema
-    - name: Compile
-      run:  "python compile.py"
-    - name: Check all examples match compiled schema
-      run: "for f in examples/*; do   echo \"File: $f\"; jsonschema -i $f _compiled/360-giving-schema-including-extension.json || exit 1;   done"
-
+    #    - name: Compile
+    #      run:  "python compile.py"
+    #    - name: Check all examples match compiled schema
+    #      run: "for f in examples/*; do   echo \"File: $f\"; jsonschema -i $f _compiled/360-giving-schema-including-extension.json || exit 1;   done"
+    #

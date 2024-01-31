@@ -3,7 +3,7 @@
   "definitions": {
     "DeiApplicationArea": {
       "type": "object",
-      "title": "DEI Application Area",
+      "title": "DEI Application area",
       "description": "A DEI application area used to collect information about whether a particular question was asked, responded to, and additional information. It also contains the response information under the Response fields.",
       "required": [
         "askedStatus"
@@ -68,38 +68,44 @@
           }
         }
       }
-    },
-    "properties": {
-      "deiDetails": {
-        "type": "object",
-        "title": "DEI Details",
-        "description": "The DEI Details for this grant. Contains information about separate application areas and the responses to them.",
-        "required": [
-          "leadership",
-          "mission",
-          "project"
-        ],
-        "properties": {
-          "deiVersion": {
-            "type": "string",
-            "title": "DEI Data Standard Version",
-            "description": "The version of the DEI Data Standard that this data uses e.g. 1.1",
-            "pattern": "^[1-9]+\\.[1-9]\\d*$"
-          },
-          "purposes": {
-            "type": "string",
-            "title": "Purposes",
-            "description": "The purposes of collecting this data."
-          },
-          "leadership": {
-            "$ref": "#/definitions/DeiApplicationArea"
-          },
-          "mission": {
-            "$ref": "#/definitions/DeiApplicationArea"
-          },
-          "project": {
-            "$ref": "#/definitions/DeiApplicationArea"
-          }
+    }
+  },
+  "properties": {
+    "deiDetails": {
+      "type": "object",
+      "title": "DEI Details",
+      "description": "The DEI Details for this grant. Contains information about separate application areas and the responses to them.",
+      "required": [
+        "leadership",
+        "mission",
+        "project"
+      ],
+      "properties": {
+        "deiVersion": {
+          "type": "string",
+          "title": "DEI Data Standard Version",
+          "description": "The version of the DEI Data Standard that this data uses e.g. 1.1",
+          "pattern": "^[1-9]+\\.[1-9]\\d*$"
+        },
+        "purposes": {
+          "type": "string",
+          "title": "Purposes",
+          "description": "The purposes of collecting this data."
+        },
+        "leadership": {
+          "title": "Leadership",
+          "description": "A DEI application area used to collect information about whether the leadership question was asked, responded to, and additional information. It also contains the response information under the Response fields.",
+          "$ref": "#/definitions/DeiApplicationArea"
+        },
+        "mission": {
+          "title": "Mission",
+          "description": "A DEI application area used to collect information about whether the mission question was asked, responded to, and additional information. It also contains the response information under the Response fields.",
+          "$ref": "#/definitions/DeiApplicationArea"
+        },
+        "project": {
+          "title": "Project",
+          "description": "A DEI application area used to collect information about whether the project question was asked, responded to, and additional information. It also contains the response information under the Response fields.",
+          "$ref": "#/definitions/DeiApplicationArea"
         }
       }
     }
